@@ -53,6 +53,8 @@ function layout(url, canvas, startId) {
     start.x = 0; // Set the target's x value to be the origin
     start.computeX();
     // Compute X values for siblings and spouse
+    start.layoutSiblings();
+   
     // Compute X values for descendents
 
     // Find lowest/highest x and y values, scale drawing accordingly.
@@ -83,10 +85,27 @@ function layout(url, canvas, startId) {
 
     // Now laying out is done, time to call draw on the directFamily
     draw(directFamily,canvas,layout); 
+    console.log(directFamily);
     return directFamily;
 }
 
 function interpolate (x) { } // A problem for another day.
+
+FamilyTreeIndividual.birthYear = function() {
+
+}
+
+FamilyTreeIndividual.layoutSiblings = function() {
+    if (!this.siblings.length) { return }
+    var local = [this].concat(this.siblings).sort(function (a,b) {
+        return a.y - b.y
+    });
+    // Which one am I?
+    var whoamI; 
+    for (var i=0; i< local.length; i++) { if (local[i]==this) whoamI = i} 
+    for (var i=0; i< local.length; i++) { local[i].x = 2*(i - whoamI) }
+
+}
 
 FamilyTreeIndividual.SPF = function() {
     if (this.father && !this.mother) return this.father;
