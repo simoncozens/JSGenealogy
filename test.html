@@ -5,11 +5,32 @@
     <script src="DrawingEngine.js"></script>
     <script src="LayoutEngine.js"></script>
     <script>
+        var members;
         var url = document.URL.replace("test.html", "family.xml");
     </script>
 </head>
-<body onload="layout(url, document.getElementById('tree'), 'I3')">
+<body onload="members = layout(url, document.getElementById('tree'), 'I3')">
 <canvas id="tree" width=1000 height=600></canvas>
+<script>
+    document.getElementById("tree").onmouseup = function c(e) {
+        var that = this;
+        var x;
+        var y;
+        if (e.pageX || e.pageY) { x = e.pageX; y = e.pageY; }
+        else { 
+          x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; 
+          y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+        } 
+        x -= this.offsetLeft;
+        y -= this.offsetTop;
+
+        members.forEach(function(obj) { 
+            if (obj.layoutObject.inBounds(x, y, that.getContext("2d"))) {
+                members=layout(url, that,obj.id);
+            }
+        });
+    };
+</script>
 </body>
 </html>
 
