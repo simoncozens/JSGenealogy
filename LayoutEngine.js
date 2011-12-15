@@ -17,15 +17,15 @@ function layout(url, canvas) {
         if (!genmap[i.generation]) genmap[i.generation] = []; 
         genmap[ i.generation ].push(i);
         // Scan for date clues
-        var b = i.getElementsByTagName("born");
+        var b = i.born;
         var year;
-        if (b[0] && b[0].getAttribute("date")) {
-            year = b[0].getAttribute("date").match(/\d\d\d\d/); // hack
+        if (b) {
+            year = b.match(/\d\d\d\d/); // hack
             if (year && year[0]) { i.y = parseInt(year[0]); }
         } else {
-            var d  = i.getElementsByTagName("died");
-            if (d[0] && d[0].getAttribute("date")) {
-                year = b[0].getAttribute("date").match(/\d\d\d\d/); // hack
+            var d  = i.died;
+            if (d) { 
+                year = d.match(/\d\d\d\d/); // hack
                 if (year && year[0]) { 
                     i.y = parseInt(year[0]) - lifeExpectancy;
                     i.yApprox = 1;
@@ -79,7 +79,6 @@ function layout(url, canvas) {
 
     // Now laying out is done, time to call draw on the directFamily
     draw(directFamily,canvas,layout); 
-    console.log(directFamily);
     return directFamily;
 }
 
@@ -114,41 +113,4 @@ function parentsAndSpousesOf(node, gen) {
     if (node.father) { rv = rv.concat(parentsAndSpousesOf(node.father, gen - 1) ) }
     if (node.mother) { rv = rv.concat(parentsAndSpousesOf(node.mother, gen - 1) ) }
     return rv;
-}
-
-function xml2tree() {
-    var doc = getXml("file:///Users/simon/hacks/semantic/tyndale/family.xml"); if (!doc) return;
-    var indivs = {};
-    var indList = doc.getElementsByTagName("individual");
-    for (i=0; i < indList.length; i++) {
-        var ind = indList[i];
-        indivs[ind.getAttribute("id")] = ind;
-    } 
-    for (i=0; i < indList.length; i++) {
-        var ind = indList[i];
-        ind.name = ind.getElementsByTagName("name")[0].textContent;
-        ind.name = ind.name.replace(/\//g,"");
-        ind.id = ind.getAttribute("id");
-
-        var f = ind.getElementsByTagName("father");
-        if (f && f[0]) { ind.father = indivs[f[0].getAttribute("ref")] }
-        var m = ind.getElementsByTagName("mother");
-        if (m && m[0]) { ind.mother = indivs[m[0].getAttribute("ref")] }
-        var s = ind.getElementsByTagName("spouse");
-        ind.spouses=[];
-        for (var x=0; x< s.length; x++){ var spice = s[x];
-            ind.spouses.push( indivs[spice.getAttribute("ref")] );
-        }
-        var s = ind.getElementsByTagName("sibling");
-        ind.siblings=[];
-        for (var x=0; x< s.length; x++){ var sib = s[x];
-            ind.siblings.push( indivs[sib.getAttribute("ref")] );
-        }
-        ind.offspring=[];
-        var c = ind.getElementsByTagName("child");
-        for (var x=0; x< c.length; x++){ var child = c[x];
-            ind.offspring.push( indivs[child.getAttribute("ref")] );
-        }
-    }
-    return indivs;
 }

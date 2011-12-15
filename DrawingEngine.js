@@ -8,7 +8,7 @@ function draw( fam, c, layout) {
         var width = context.measureText(i.name).width;
         context.beginPath();
         if (i.name.match(/[a-zA-Z]/)) {
-        if (i.getAttribute("sex") == "M") {
+        if (i.sex == "M") {
             context.rect(i.x - (width+border) + width /2, i.y-border,width + 2*border, border*2);
         } else {
             context.roundRect(i.x - (width+border) + width /2, i.y -border,width + 2*border, border*2);
