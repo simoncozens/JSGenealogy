@@ -14,7 +14,7 @@ function getXml(url) {
     var req = new XMLHttpRequest();
     req.open("GET", url, false);
     req.send(null);
-    if (req.status != 0) { return }
+    if (req.status != 0 && req.status != 200) { return }
     var t = req.responseText;
     var d = new DOMParser();
     doc = d.parseFromString(t, "text/xml").firstChild;
