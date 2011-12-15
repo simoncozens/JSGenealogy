@@ -1,12 +1,12 @@
 <html>
 <head>
-    <script src="Utilities.js"></script>
-    <script src="DataImport.js"></script>
-    <script src="DrawingEngine.js"></script>
-    <script src="LayoutEngine.js"></script>
+    <script src="https://raw.github.com/simoncozens/JSGenealogy/master/Utilities.js"></script>
+    <script src="https://raw.github.com/simoncozens/JSGenealogy/master/DataImport.js"></script>
+    <script src="https://raw.github.com/simoncozens/JSGenealogy/master/DrawingEngine.js"></script>
+    <script src="https://raw.github.com/simoncozens/JSGenealogy/master/LayoutEngine.js"></script>
     <script>
         var members;
-        var url = document.URL.replace("test.html", "family.xml");
+        var url = "https://raw.github.com/simoncozens/JSGenealogy/master/family.xml"
     </script>
 </head>
 <body onload="members = layout(url, document.getElementById('tree'), 'I2')">
