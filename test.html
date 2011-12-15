@@ -6,7 +6,7 @@
     <script src="https://raw.github.com/simoncozens/JSGenealogy/master/LayoutEngine.js"></script>
     <script>
         var members;
-        var url = "https://raw.github.com/simoncozens/JSGenealogy/master/family.xml"
+        var url = document.URL.replace("test.html", "family.xml");
     </script>
 </head>
 <body onload="members = layout(url, document.getElementById('tree'), 'I2')">
