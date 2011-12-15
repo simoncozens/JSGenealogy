@@ -1,16 +1,17 @@
 var border = 10;
+var start;
 function layout(url, canvas) {
     var lifeExpectancy = 60;
     var tree = xml2tree(url);
-    var start = tree["I2"];
+    start = tree["I2"];
     //var 
     directFamily = [ start ];
     if ( start.spouses.length ) { directFamily = directFamily.concat(start.spouses) };
     directFamily.forEach( function(i) { i.generation = 0; });
     start.siblings.forEach( function(s){ directFamily.push(s); s.generation = 0; });
     directFamily = 
-        directFamily.concat(childrenAndSpousesOf(start, 0))
-        .concat(parentsAndSpousesOf(start, 0)).unique("id"); 
+        directFamily.concat(start.childrenAndSpouses(0))
+        .concat(start.parentsAndSpouses(0)).unique("id"); 
     // Organise into generations
     var genmap = {}; 
     directFamily.forEach( function(i) {
@@ -48,9 +49,9 @@ function layout(url, canvas) {
     }
     interpolate(genmap); 
     // Compute X values for ancestors
-    computeWidth(start);
+    start.computeWidth();
     start.x = 0; // Set the target's x value to be the origin
-    computeX(start);
+    start.computeX();
     // Compute X values for siblings and spouse
     // Compute X values for descendents
 
@@ -84,33 +85,35 @@ function layout(url, canvas) {
 
 function interpolate (x) { } // A problem for another day.
 
-function computeWidth (node) {
-    if (!node.father && !node.mother) { return node.width = 1 }
-    if ( node.father && !node.mother) { return node.width = computeWidth(node.father) } 
-    if (!node.father &&  node.mother) { return node.width = computeWidth(node.mother) } 
-    node.width = 1+ computeWidth(node.mother) + computeWidth(node.father); 
-    return node.width;
+FamilyTreeIndividual.SPF = function() {
+    if (this.father && !this.mother) return this.father;
+    if (this.mother && !this.father) return this.mother;
+}
+FamilyTreeIndividual.computeWidth = function () {
+    if (!this.father && !this.mother) { return this.width = 1 }
+    if (this.SPF()) { return this.width = this.SPF.computeWidth(); }
+    this.width = 1+ this.mother.computeWidth() + this.father.computeWidth(); 
+    return this.width;
 }
 
-function computeX (node) {
-    if (node.father) { node.father.x = node.x - (node.width-1) / 2; computeX(node.father); }
-    if (node.mother) { node.mother.x = node.x + (node.width-1) / 2; computeX(node.mother); }
-    //console.log(node.name+" ("+node.id+") X co-ord is "+node.x);
+FamilyTreeIndividual.computeX = function() { 
+    if (this.father) { this.father.x = this.x - (this.width-1) / 2; this.father.computeX(); }
+    if (this.mother) { this.mother.x = this.x + (this.width-1) / 2; this.mother.computeX(); }
 }
 
-function childrenAndSpousesOf(node, gen) {
-    var rv = [node];
-    if (node.spouse) rv = rv.concat(node.spouse);
+FamilyTreeIndividual.childrenAndSpouses = function (gen) {
+    var rv = [this];
+    if (this.spouse) rv = rv.concat(this.spouse);
     rv.forEach(function(i) { i.generation = gen });
-    node.offspring.forEach(function(i) { rv = rv.concat(childrenAndSpousesOf(i, gen+1)); });
+    this.offspring.forEach(function(i) { rv = rv.concat(i.childrenAndSpouses(gen+1)); });
     return rv;
 }
 
-function parentsAndSpousesOf(node, gen) { 
-    var rv = [node];
-    if (node.spouse) rv = rv.concat(node.spouse);
+FamilyTreeIndividual.parentsAndSpouses = function(gen) { 
+    var rv = [this];
+    if (this.spouse) rv = rv.concat(this.spouse);
     rv.forEach(function(i) { i.generation = gen });
-    if (node.father) { rv = rv.concat(parentsAndSpousesOf(node.father, gen - 1) ) }
-    if (node.mother) { rv = rv.concat(parentsAndSpousesOf(node.mother, gen - 1) ) }
+    if (this.father) { rv = rv.concat(this.father.parentsAndSpouses(gen-1)) }
+    if (this.mother) { rv = rv.concat(this.mother.parentsAndSpouses(gen-1)) }
     return rv;
 }
