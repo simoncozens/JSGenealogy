@@ -6,8 +6,9 @@ function xml2tree(url) {
     var indList = doc.getElementsByTagName("individual");
     for (i=0; i < indList.length; i++) {
         var ind = indList[i];
-        var node = { DOMNode: ind };
-        node.prototype = FamilyTreeIndividual;
+        var F = function() {}; F.prototype = FamilyTreeIndividual;
+        var node = new F();
+        node.DOMNode = ind;
         indivs[ind.getAttribute("id")] = node;
     } 
     for (i in indivs) {
