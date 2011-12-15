@@ -75,7 +75,7 @@ function layout(url, canvas, startId) {
     directFamily.forEach(function(i){
         var l = function() {}; l.prototype = LayoutHelper;
         i.layoutObject = new l(); 
-        i.layoutObject.parent = i;
+        i.layoutObject.indiv = i;
         if (!(i.hasOwnProperty("x") && i.y)) return;
         i.layoutObject.x =  ((i.x - layout.minX) * canvas.width / layout.width);
         i.layoutObject.y =  ((i.y - layout.minY) * canvas.height / layout.height);

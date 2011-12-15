@@ -1,17 +1,31 @@
 var border = 10;
 
 LayoutHelper = {};
+LayoutHelper.boundaries = function(context) {
+    var width = context.measureText(this.indiv.name).width;
+    return [ this.x - (width + border) + width / 2,
+             this.y - border,
+             this.x + border + width / 2,
+             this.y + border
+           ]
+};
+
+LayoutHelper.inBounds = function(x,y, context) {
+    var bounds = this.boundaries(context);
+    return x >= bounds[0] && x <= bounds[2] && y >= bounds[1] && y <= bounds[3]
+} 
+
 LayoutHelper.drawBox = function(context) {
-    var width = context.measureText(this.parent.name).width;
+    var width = context.measureText(this.indiv.name).width;
     context.beginPath();
-    if (this.parent.sex == "M") {
+    if (this.indiv.sex == "M") {
         context.rect(this.x - (width+border) + width /2, 
                      this.y-border,width + 2*border, border*2);
     } else {
         context.roundRect(this.x - (width+border) + width
         /2, this.y -border,width + 2*border, border*2);
     }
-    if (this.parent.yApprox) { context.fillStyle = "#ddddff"; context.fill() }
+    if (this.indiv.yApprox) { context.fillStyle = "#ddddff"; context.fill() }
     context.stroke();
 }
 
@@ -21,12 +35,12 @@ LayoutHelper.labelBox = function(context) {
     context.fillStyle = "#000000";
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillText(this.parent.name, this.x, this.y);
+    context.fillText(this.indiv.name, this.x, this.y);
 }
 
 LayoutHelper.drawMarriage = function(context) {
-    var mother = this.parent.mother.layoutObject;
-    var father = this.parent.father.layoutObject;
+    var mother = this.indiv.mother.layoutObject;
+    var father = this.indiv.father.layoutObject;
     var marriageY = mother.y < father.y ? father.y : mother.y;
     context.beginPath();
     context.moveTo(mother.x, mother.y+border);
@@ -39,7 +53,7 @@ LayoutHelper.drawMarriage = function(context) {
 }
 
 LayoutHelper.drawSingleParent = function(context) {
-    var par = this.parent.SPF();
+    var par = this.indiv.SPF();
     if (!par) return;
     par = par.layoutObject;
     context.beginPath();
