@@ -1,38 +1,54 @@
 var border = 10;
+
+LayoutHelper = {};
+LayoutHelper.drawBox = function(context) {
+    var width = context.measureText(this.parent.name).width;
+    context.beginPath();
+    if (this.parent.sex == "M") {
+        context.rect(this.x - (width+border) + width /2, 
+                     this.y-border,width + 2*border, border*2);
+    } else {
+        context.roundRect(this.x - (width+border) + width
+        /2, this.y -border,width + 2*border, border*2);
+    }
+    if (this.parent.yApprox) { context.fillStyle = "#ddddff"; context.fill() }
+    context.stroke();
+}
+
+LayoutHelper.labelBox = function(context) {
+    context.lineWidth = 1;
+    context.strokeStyle = "black";
+    context.fillStyle = "#000000";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillText(this.parent.name, this.x, this.y);
+}
+
+LayoutHelper.drawMarriage = function(context) {
+    var mother = this.parent.mother.layoutObject;
+    var father = this.parent.father.layoutObject;
+    var marriageY = mother.y < father.y ? father.y : mother.y;
+    context.beginPath();
+    context.moveTo(mother.x, mother.y+border);
+    context.lineTo(mother.x, marriageY+2*border);
+    context.lineTo(father.x, marriageY+2*border);
+    context.lineTo(father.x, father.y+border);
+    context.moveTo((mother.x + father.x)/2, marriageY+2*border);
+    context.lineTo(this.x, this.y-border);
+    context.stroke();
+}
+
 function draw( fam, c, layout) {
     var context = c.getContext("2d");
     context.clearRect(0, 0, c.width, c.height);
     drawTimeline(c, layout);
     fam.forEach(function(i) {
         if (!(i.hasOwnProperty("x") && i.y)) return;
-        var width = context.measureText(i.name).width;
-        context.beginPath();
-        if (i.name.match(/[a-zA-Z]/)) {
-        if (i.sex == "M") {
-            context.rect(i.x - (width+border) + width /2, i.y-border,width + 2*border, border*2);
-        } else {
-            context.roundRect(i.x - (width+border) + width /2, i.y -border,width + 2*border, border*2);
-        }
-        if (i.yApprox) { context.fillStyle = "#ddddff"; context.fill() }
-        }
-        context.lineWidth = 1;
-        context.strokeStyle = "black";
-        context.fillStyle = "#000000";
-        context.textAlign = "center";
-        context.textBaseline = "middle";
-        context.fillText(i.name, i.x, i.y);
-        context.stroke();
+        i.layoutObject.drawBox(context);
+        i.layoutObject.labelBox(context);
         if (i.father && i.mother) {
+            i.layoutObject.drawMarriage(context);
             // Draw the marriage
-            var marriageY = i.mother.y < i.father.y ? i.father.y : i.mother.y;
-            context.beginPath();
-            context.moveTo(i.mother.x, i.mother.y+border);
-            context.lineTo(i.mother.x, marriageY+2*border);
-            context.lineTo(i.father.x, marriageY+2*border);
-            context.lineTo(i.father.x, i.father.y+border);
-            context.moveTo((i.mother.x + i.father.x)/2, marriageY+2*border);
-            context.lineTo(i.x, i.y-border);
-            context.stroke();
         } else {
             var par = i.mother || i.father;
             if (par) {

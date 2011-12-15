@@ -73,9 +73,12 @@ function layout(url, canvas) {
     console.log(layout.width+ "  " + layout.height);
     console.log(canvas.width+ "  " + canvas.height);
     directFamily.forEach(function(i){
+        var l = function() {}; l.prototype = LayoutHelper;
+        i.layoutObject = new l(); 
+        i.layoutObject.parent = i;
         if (!(i.hasOwnProperty("x") && i.y)) return;
-        i.x =  ((i.x - layout.minX) * canvas.width / layout.width);
-        i.y =  ((i.y - layout.minY) * canvas.height / layout.height);
+        i.layoutObject.x =  ((i.x - layout.minX) * canvas.width / layout.width);
+        i.layoutObject.y =  ((i.y - layout.minY) * canvas.height / layout.height);
     });
 
     // Now laying out is done, time to call draw on the directFamily
