@@ -1,0 +1,1102 @@
+<family>
+  <individual id="I1" sex="M">
+    <name>Simon /Cozens/</name>
+    <born date="1978-05-29"/>
+    
+    <father ref="I2"/>
+    <mother ref="I3"/>
+    
+    
+    
+  </individual>
+  <individual id="I2" sex="M">
+    <name>Phillip /Cozens/</name>
+    <born date="1951-10-26"/>
+    
+    <father ref="I6"/>
+    <mother ref="I50"/>
+    <spouse ref="I3"/>
+    <sibling ref="I8"/><sibling ref="I9"/>
+    <child ref="I1"/>
+  </individual>
+  <individual id="I3" sex="F">
+    <name>Ann /King/</name>
+    <born date="1948-11-6"/>
+    
+    <father ref="I4"/>
+    <mother ref="I5"/>
+    <spouse ref="I2"/>
+    
+    <child ref="I1"/>
+  </individual>
+  <individual id="I4" sex="M">
+    <name>John /King/</name>
+    <born date="1904-04-03"/>
+    <died date="16.10.2000"/>
+    <father ref="I37"/>
+    <mother ref="I38"/>
+    <spouse ref="I5"/>
+    <sibling ref="I39"/><sibling ref="I40"/><sibling ref="I41"/>
+    <child ref="I3"/>
+  </individual>
+  <individual id="I5" sex="F">
+    <name>Jane /Bond/</name>
+    <born date="1909-01-29"/>
+    <died date="2002-02-21"/>
+    <father ref="I13"/>
+    <mother ref="I14"/>
+    <spouse ref="I4"/>
+    
+    <child ref="I3"/>
+  </individual>
+  <individual id="I6" sex="M">
+    <name>Charles /Cozens/</name>
+    <born date="1920-12-28"/>
+    <died date="1989-05-28"/>
+    <father ref="I53"/>
+    <mother ref="I66"/>
+    <spouse ref="I50"/>
+    <sibling ref="I56"/><sibling ref="I54"/><sibling ref="I55"/><sibling ref="I81"/>
+    <child ref="I8"/><child ref="I2"/><child ref="I9"/>
+  </individual>
+  <individual id="I7" sex="F">
+    <name>//</name>
+    
+    
+    <father ref=""/>
+    
+    
+    
+    
+  </individual>
+  <individual id="I8" sex="M">
+    <name>David /Cozens/</name>
+    <born date="1947-12-15"/>
+    
+    <father ref="I6"/>
+    <mother ref="I50"/>
+    
+    <sibling ref="I2"/><sibling ref="I9"/>
+    
+  </individual>
+  <individual id="I9" sex="M">
+    <name>Stephen /Cozens/</name>
+    <born date="1957-07-30"/>
+    
+    <father ref="I6"/>
+    <mother ref="I50"/>
+    
+    <sibling ref="I8"/><sibling ref="I2"/>
+    <child ref="I10"/><child ref="I11"/>
+  </individual>
+  <individual id="I10" sex="F">
+    <name>Leanne /Cozens/</name>
+    
+    
+    <father ref="I9"/>
+    
+    
+    <sibling ref="I11"/>
+    
+  </individual>
+  <individual id="I11" sex="F">
+    <name>Gemma /Cozens/</name>
+    
+    
+    <father ref="I9"/>
+    
+    
+    <sibling ref="I10"/>
+    
+  </individual>
+  <individual id="I12" sex="M">
+    <name>William /Bond/</name>
+    <born date="?.03.1896"/>
+    
+    <father ref=""/>
+    
+    
+    
+    
+  </individual>
+  <individual id="I13" sex="M">
+    <name>Walter /Bond/</name>
+    <born date="1881"/>
+    <died date="1966-03-02"/>
+    <father ref="I15"/>
+    
+    <spouse ref="I14"/>
+    
+    <child ref="I5"/>
+  </individual>
+  <individual id="I14" sex="F">
+    <name>Elizabeth /Entwistle/</name>
+    <born date="1883-04-30"/>
+    <died date="1979-01-26"/>
+    <father ref="I16"/>
+    <mother ref="I17"/>
+    <spouse ref="I13"/>
+    <sibling ref="I29"/><sibling ref="I97"/><sibling ref="I95"/><sibling ref="I30"/><sibling ref="I96"/>
+    <child ref="I5"/>
+  </individual>
+  <individual id="I15" sex="M">
+    <name>Thomas /Bond/</name>
+    
+    
+    <father ref=""/>
+    
+    
+    
+    <child ref="I13"/>
+  </individual>
+  <individual id="I16" sex="M">
+    <name>Thomas /Entwistle/</name>
+    <born date="1861"/>
+    
+    <father ref="I18"/>
+    <mother ref="I21"/>
+    <spouse ref="I17"/>
+    <sibling ref="I86"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I83"/><sibling ref="I82"/>
+    <child ref="I29"/><child ref="I97"/><child ref="I95"/><child ref="I30"/><child ref="I14"/><child ref="I96"/>
+  </individual>
+  <individual id="I17" sex="F">
+    <name>Margaret /Phoenix/</name>
+    <born date="1864"/>
+    
+    <father ref="I19"/>
+    
+    <spouse ref="I16"/>
+    <sibling ref="I49"/>
+    <child ref="I29"/><child ref="I97"/><child ref="I95"/><child ref="I30"/><child ref="I14"/><child ref="I96"/>
+  </individual>
+  <individual id="I18" sex="M">
+    <name>William /Entwistle/</name>
+    <born date="1838-09-18"/>
+    <died date="1893-10-28"/>
+    <father ref="I22"/>
+    <mother ref="I24"/>
+    <spouse ref="I21"/>
+    
+    <child ref="I86"/><child ref="I16"/><child ref="I20"/><child ref="I85"/><child ref="I84"/><child ref="I83"/><child ref="I82"/>
+  </individual>
+  <individual id="I19" sex="M">
+    <name>John /Phoenix/</name>
+    
+    
+    <father ref=""/>
+    
+    
+    
+    <child ref="I17"/><child ref="I49"/>
+  </individual>
+  <individual id="I20" sex="M">
+    <name>Robert /Entwistle/</name>
+    <born date="c1870"/>
+    
+    <father ref="I18"/>
+    <mother ref="I21"/>
+    
+    <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I83"/><sibling ref="I82"/>
+    
+  </individual>
+  <individual id="I21" sex="F">
+    <name>Elizabeth /Dawson/</name>
+    <born date="c1835"/>
+    
+    <father ref="I23"/>
+    
+    <spouse ref="I18"/>
+    
+    <child ref="I86"/><child ref="I16"/><child ref="I20"/><child ref="I85"/><child ref="I84"/><child ref="I83"/><child ref="I82"/>
+  </individual>
+  <individual id="I22" sex="M">
+    <name>Thomas /Easton/</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I24"/>
+    
+    <child ref="I18"/>
+  </individual>
+  <individual id="I23" sex="M">
+    <name>John /Dawson/</name>
+    
+    
+    <father ref=""/>
+    
+    
+    
+    <child ref="I21"/>
+  </individual>
+  <individual id="I24" sex="F">
+    <name>Martha /Entwistle/</name>
+    <born date="1817-03-16"/>
+    <died date="1855"/>
+    <father ref="I25"/>
+    <mother ref="I26"/>
+    <spouse ref="I22"/>
+    <sibling ref="I35"/>
+    <child ref="I18"/>
+  </individual>
+  <individual id="I25" sex="M">
+    <name>Ralph /Entwistle/</name>
+    <born date="1789-06-21"/>
+    <died date="1855"/>
+    <father ref="I27"/>
+    <mother ref="I28"/>
+    <spouse ref="I26"/>
+    
+    <child ref="I24"/><child ref="I35"/>
+  </individual>
+  <individual id="I26" sex="F">
+    <name>Jane /Eckersley/</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I25"/>
+    
+    <child ref="I24"/><child ref="I35"/>
+  </individual>
+  <individual id="I27" sex="M">
+    <name>Thomas /Entwistle/</name>
+    
+    
+    <father ref="I34"/>
+    
+    <spouse ref="I28"/>
+    
+    <child ref="I25"/>
+  </individual>
+  <individual id="I28" sex="F">
+    <name>Hannah //</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I27"/>
+    
+    <child ref="I25"/>
+  </individual>
+  <individual id="I29" sex="M">
+    <name>Ralph /Entwistle/</name>
+    <born date="1901"/>
+    
+    <father ref="I16"/>
+    <mother ref="I17"/>
+    <spouse ref="I36"/>
+    <sibling ref="I97"/><sibling ref="I95"/><sibling ref="I30"/><sibling ref="I14"/><sibling ref="I96"/>
+    <child ref="I31"/><child ref="I32"/>
+  </individual>
+  <individual id="I30" sex="M">
+    <name>James /Entwistle/</name>
+    <born date="1888"/>
+    
+    <father ref="I16"/>
+    <mother ref="I17"/>
+    
+    <sibling ref="I29"/><sibling ref="I97"/><sibling ref="I95"/><sibling ref="I14"/><sibling ref="I96"/>
+    
+  </individual>
+  <individual id="I31" sex="M">
+    <name>John /Entwistle/</name>
+    
+    
+    <father ref="I29"/>
+    <mother ref="I36"/>
+    
+    <sibling ref="I32"/>
+    <child ref="I47"/><child ref="I48"/>
+  </individual>
+  <individual id="I32" sex="F">
+    <name>Irene /Entwistle/</name>
+    
+    
+    <father ref="I29"/>
+    <mother ref="I36"/>
+    
+    <sibling ref="I31"/>
+    
+  </individual>
+  <individual id="I33" sex="M">
+    <name>/Entwistle/</name>
+    
+    
+    <father ref=""/>
+    
+    
+    
+    
+  </individual>
+  <individual id="I34" sex="M">
+    <name>Thomas /Entwistle/</name>
+    
+    
+    <father ref=""/>
+    
+    
+    
+    <child ref="I27"/>
+  </individual>
+  <individual id="I35" sex="M">
+    <name>James /Entwistle/</name>
+    
+    
+    <father ref="I25"/>
+    <mother ref="I26"/>
+    
+    <sibling ref="I24"/>
+    
+  </individual>
+  <individual id="I36" sex="F">
+    <name>Edith //</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I29"/>
+    
+    <child ref="I31"/><child ref="I32"/>
+  </individual>
+  <individual id="I37" sex="M">
+    <name>Sam /King/</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I38"/>
+    
+    <child ref="I4"/><child ref="I39"/><child ref="I40"/><child ref="I41"/>
+  </individual>
+  <individual id="I38" sex="F">
+    <name>Alexandrine /Fournier/</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I37"/>
+    
+    <child ref="I4"/><child ref="I39"/><child ref="I40"/><child ref="I41"/>
+  </individual>
+  <individual id="I39" sex="M">
+    <name>Sam /King/</name>
+    
+    
+    <father ref="I37"/>
+    <mother ref="I38"/>
+    <spouse ref="I46"/>
+    <sibling ref="I4"/><sibling ref="I40"/><sibling ref="I41"/>
+    <child ref="I45"/>
+  </individual>
+  <individual id="I40" sex="F">
+    <name>Marie /King/</name>
+    
+    
+    <father ref="I37"/>
+    <mother ref="I38"/>
+    
+    <sibling ref="I4"/><sibling ref="I39"/><sibling ref="I41"/>
+    
+  </individual>
+  <individual id="I41" sex="M">
+    <name>Eric /King/</name>
+    
+    
+    <father ref="I37"/>
+    <mother ref="I38"/>
+    <spouse ref="I42"/>
+    <sibling ref="I4"/><sibling ref="I39"/><sibling ref="I40"/>
+    <child ref="I43"/><child ref="I44"/>
+  </individual>
+  <individual id="I42" sex="F">
+    <name>Jean //</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I41"/>
+    
+    <child ref="I43"/><child ref="I44"/>
+  </individual>
+  <individual id="I43" sex="F">
+    <name>Christine /King/</name>
+    <born date="?1960"/>
+    
+    <father ref="I41"/>
+    <mother ref="I42"/>
+    
+    <sibling ref="I44"/>
+    
+  </individual>
+  <individual id="I44" sex="M">
+    <name>Paul /King/</name>
+    
+    
+    <father ref="I41"/>
+    <mother ref="I42"/>
+    
+    <sibling ref="I43"/>
+    
+  </individual>
+  <individual id="I45" sex="M">
+    <name>Gordon /King/</name>
+    <born date="?1948"/>
+    
+    <father ref="I39"/>
+    <mother ref="I46"/>
+    
+    
+    
+  </individual>
+  <individual id="I46" sex="F">
+    <name>Gladys //</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I39"/>
+    
+    <child ref="I45"/>
+  </individual>
+  <individual id="I47" sex="M">
+    <name>Stuart /Entwistle/</name>
+    
+    
+    <father ref="I31"/>
+    
+    
+    <sibling ref="I48"/>
+    
+  </individual>
+  <individual id="I48" sex="M">
+    <name>Beverley /Entwistle/</name>
+    
+    
+    <father ref="I31"/>
+    
+    
+    <sibling ref="I47"/>
+    
+  </individual>
+  <individual id="I49" sex="F">
+    <name>Catherine /Phoenix/</name>
+    
+    
+    <father ref="I19"/>
+    
+    
+    <sibling ref="I17"/>
+    
+  </individual>
+  <individual id="I50" sex="F">
+    <name>Cissie /Holroyd/</name>
+    <born date="1927-02-13"/>
+    <died date="1997-03"/>
+    <father ref="I52"/>
+    <mother ref="I51"/>
+    <spouse ref="I6"/>
+    
+    <child ref="I8"/><child ref="I2"/><child ref="I9"/>
+  </individual>
+  <individual id="I51" sex="F">
+    <name>Lilly /Entwistle/</name>
+    <born date="1901-08-30"/>
+    <died date="1985-2-3"/>
+    <father ref="I68"/>
+    <mother ref="I72"/>
+    <spouse ref="I52"/><spouse ref="I65"/>
+    
+    <child ref="I50"/><child ref="I62"/>
+  </individual>
+  <individual id="I52" sex="M">
+    <name>Theodore /Holroyd/</name>
+    <born date="1901"/>
+    <died date="1933-05-18"/>
+    <father ref="I67"/>
+    <mother ref="I92"/>
+    <spouse ref="I51"/>
+    <sibling ref="I93"/><sibling ref="I94"/>
+    <child ref="I50"/>
+  </individual>
+  <individual id="I53" sex="M">
+    <name>Phillip /Cozens/</name>
+    <born date="1883-11-11"/>
+    <died date="1975-Q2"/>
+    <father ref="I87"/>
+    <mother ref="I88"/>
+    <spouse ref="I66"/>
+    <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/>
+    <child ref="I56"/><child ref="I54"/><child ref="I55"/><child ref="I6"/><child ref="I81"/>
+  </individual>
+  <individual id="I54" sex="M">
+    <name>Henry /Cozens/</name>
+    <born date="1907-Q4"/>
+    
+    <father ref="I53"/>
+    <mother ref="I66"/>
+    <spouse ref="I59"/>
+    <sibling ref="I56"/><sibling ref="I55"/><sibling ref="I6"/><sibling ref="I81"/>
+    <child ref="I60"/>
+  </individual>
+  <individual id="I55" sex="M">
+    <name>Sam /Cozens/</name>
+    <born date="1917-Q2"/>
+    
+    <father ref="I53"/>
+    <mother ref="I66"/>
+    
+    <sibling ref="I56"/><sibling ref="I54"/><sibling ref="I6"/><sibling ref="I81"/>
+    
+  </individual>
+  <individual id="I56" sex="M">
+    <name>Fred /Cozens/</name>
+    <born date="1901-Q1"/>
+    
+    <father ref="I53"/>
+    <mother ref="I66"/>
+    <spouse ref="I57"/>
+    <sibling ref="I54"/><sibling ref="I55"/><sibling ref="I6"/><sibling ref="I81"/>
+    <child ref="I58"/>
+  </individual>
+  <individual id="I57" sex="F">
+    <name>Milly //</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I56"/>
+    
+    <child ref="I58"/>
+  </individual>
+  <individual id="I58" sex="M">
+    <name>Arthur /Cozens/</name>
+    
+    
+    <father ref="I56"/>
+    <mother ref="I57"/>
+    
+    
+    
+  </individual>
+  <individual id="I59" sex="F">
+    <name>Emma //</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I54"/>
+    
+    <child ref="I60"/>
+  </individual>
+  <individual id="I60" sex="F">
+    <name>Peggy /Cozens/</name>
+    
+    
+    <father ref="I54"/>
+    <mother ref="I59"/>
+    
+    
+    
+  </individual>
+  <individual id="I61" sex="M">
+    <name>William /Cozens/</name>
+    <born date="1878"/>
+    
+    <father ref="I87"/>
+    <mother ref="I88"/>
+    
+    <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I53"/>
+    
+  </individual>
+  <individual id="I62" sex="M">
+    <name>Jack /Pilling/</name>
+    
+    
+    <father ref="I65"/>
+    <mother ref="I51"/>
+    <spouse ref="I63"/>
+    
+    <child ref="I64"/><child ref="I69"/><child ref="I70"/>
+  </individual>
+  <individual id="I63" sex="F">
+    <name>Shirley //</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I62"/>
+    
+    <child ref="I64"/><child ref="I69"/><child ref="I70"/>
+  </individual>
+  <individual id="I64" sex="M">
+    <name>Rob /Pilling/</name>
+    
+    
+    <father ref="I62"/>
+    <mother ref="I63"/>
+    
+    <sibling ref="I69"/><sibling ref="I70"/>
+    
+  </individual>
+  <individual id="I65" sex="M">
+    <name>William /Pilling/</name>
+    
+    <died date="1950-09-20"/>
+    <father ref=""/>
+    
+    <spouse ref="I51"/>
+    
+    <child ref="I62"/>
+  </individual>
+  <individual id="I66" sex="F">
+    <name>Matilda /Bugden/</name>
+    <born date="1885-Q2"/>
+    
+    <father ref="I103"/>
+    <mother ref="I104"/>
+    <spouse ref="I53"/>
+    <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I106"/><sibling ref="I105"/>
+    <child ref="I56"/><child ref="I54"/><child ref="I55"/><child ref="I6"/><child ref="I81"/>
+  </individual>
+  <individual id="I67" sex="M">
+    <name>James /Holroyd/</name>
+    <born date="1853?"/>
+    
+    <father ref=""/>
+    
+    <spouse ref="I92"/>
+    
+    <child ref="I93"/><child ref="I94"/><child ref="I52"/>
+  </individual>
+  <individual id="I68" sex="M">
+    <name>John /Entwistle/</name>
+    <born date="1877"/>
+    
+    <father ref=""/>
+    
+    <spouse ref="I72"/>
+    
+    <child ref="I51"/>
+  </individual>
+  <individual id="I69" sex="F">
+    <name>Lynda /Pilling/</name>
+    
+    
+    <father ref="I62"/>
+    <mother ref="I63"/>
+    
+    <sibling ref="I64"/><sibling ref="I70"/>
+    
+  </individual>
+  <individual id="I70" sex="F">
+    <name>Susan /Pilling/</name>
+    
+    
+    <father ref="I62"/>
+    <mother ref="I63"/>
+    <spouse ref="I71"/>
+    <sibling ref="I64"/><sibling ref="I69"/>
+    
+  </individual>
+  <individual id="I71" sex="M">
+    <name>/Woods/</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I70"/>
+    
+    
+  </individual>
+  <individual id="I72" sex="F">
+    <name>Sarah /Longworth/</name>
+    <born date="1877"/>
+    <died date="1925-07-27"/>
+    <father ref="I74"/>
+    <mother ref="I75"/>
+    <spouse ref="I68"/>
+    <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I76"/>
+    <child ref="I51"/>
+  </individual>
+  <individual id="I73" sex="M">
+    <name>Henry /Longworth/</name>
+    <born date="1870"/>
+    
+    <father ref="I74"/>
+    <mother ref="I75"/>
+    
+    <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I72"/><sibling ref="I76"/>
+    
+  </individual>
+  <individual id="I74" sex="M">
+    <name>James /Longworth/</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I75"/>
+    
+    <child ref="I77"/><child ref="I80"/><child ref="I73"/><child ref="I79"/><child ref="I78"/><child ref="I72"/><child ref="I76"/>
+  </individual>
+  <individual id="I75" sex="F">
+    <name>Ellen //</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I74"/>
+    
+    <child ref="I77"/><child ref="I80"/><child ref="I73"/><child ref="I79"/><child ref="I78"/><child ref="I72"/><child ref="I76"/>
+  </individual>
+  <individual id="I76" sex="M">
+    <name>Jacob /Longworth/</name>
+    <born date="1866"/>
+    
+    <father ref="I74"/>
+    <mother ref="I75"/>
+    
+    <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I72"/>
+    
+  </individual>
+  <individual id="I77" sex="M">
+    <name>James /Longworth/</name>
+    <born date="1860"/>
+    
+    <father ref="I74"/>
+    <mother ref="I75"/>
+    
+    <sibling ref="I80"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I72"/><sibling ref="I76"/>
+    
+  </individual>
+  <individual id="I78" sex="F">
+    <name>Lilly /Longworth/</name>
+    <born date="1877"/>
+    
+    <father ref="I74"/>
+    <mother ref="I75"/>
+    
+    <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I72"/><sibling ref="I76"/>
+    
+  </individual>
+  <individual id="I79" sex="F">
+    <name>Minnie /Longworth/</name>
+    <born date="1873-Q1"/>
+    
+    <father ref="I74"/>
+    <mother ref="I75"/>
+    
+    <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I73"/><sibling ref="I78"/><sibling ref="I72"/><sibling ref="I76"/>
+    
+  </individual>
+  <individual id="I80" sex="F">
+    <name>Sophia /Longworth/</name>
+    <born date="1867-Q3"/>
+    
+    <father ref="I74"/>
+    <mother ref="I75"/>
+    
+    <sibling ref="I77"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I72"/><sibling ref="I76"/>
+    
+  </individual>
+  <individual id="I81" sex="M">
+    <name>Norman /Cozens/</name>
+    <born date="1923-Q4"/>
+    
+    <father ref="I53"/>
+    <mother ref="I66"/>
+    
+    <sibling ref="I56"/><sibling ref="I54"/><sibling ref="I55"/><sibling ref="I6"/>
+    
+  </individual>
+  <individual id="I82" sex="F">
+    <name>Jane /Entwistle/</name>
+    <born date="1864?"/>
+    
+    <father ref="I18"/>
+    <mother ref="I21"/>
+    
+    <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I83"/>
+    
+  </individual>
+  <individual id="I83" sex="M">
+    <name>John /Entwistle/</name>
+    <born date="1886"/>
+    
+    <father ref="I18"/>
+    <mother ref="I21"/>
+    
+    <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I82"/>
+    
+  </individual>
+  <individual id="I84" sex="F">
+    <name>Mary /Entwistle/</name>
+    <born date="1875?"/>
+    
+    <father ref="I18"/>
+    <mother ref="I21"/>
+    
+    <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I83"/><sibling ref="I82"/>
+    
+  </individual>
+  <individual id="I85" sex="M">
+    <name>Peter /Entwistle/</name>
+    <born date="1878?"/>
+    
+    <father ref="I18"/>
+    <mother ref="I21"/>
+    
+    <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I20"/><sibling ref="I84"/><sibling ref="I83"/><sibling ref="I82"/>
+    
+  </individual>
+  <individual id="I86" sex="M">
+    <name>William /Entwistle/</name>
+    <born date="1868?"/>
+    
+    <father ref="I18"/>
+    <mother ref="I21"/>
+    
+    <sibling ref="I16"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I83"/><sibling ref="I82"/>
+    
+  </individual>
+  <individual id="I87" sex="M">
+    <name>Daniel /Cozens/</name>
+    <born date="1844?"/>
+    
+    <father ref=""/>
+    
+    <spouse ref="I88"/>
+    
+    <child ref="I101"/><child ref="I100"/><child ref="I99"/><child ref="I98"/><child ref="I89"/><child ref="I102"/><child ref="I61"/><child ref="I53"/>
+  </individual>
+  <individual id="I88" sex="F">
+    <name>Lucy //</name>
+    <born date="1845?"/>
+    
+    <father ref=""/>
+    
+    <spouse ref="I87"/>
+    
+    <child ref="I101"/><child ref="I100"/><child ref="I99"/><child ref="I98"/><child ref="I89"/><child ref="I102"/><child ref="I61"/><child ref="I53"/>
+  </individual>
+  <individual id="I89" sex="F">
+    <name>Rose /Cozens/</name>
+    <born date="1874-Q1"/>
+    
+    <father ref="I87"/>
+    <mother ref="I88"/>
+    <spouse ref="I90"/>
+    <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
+    <child ref="I91"/>
+  </individual>
+  <individual id="I90" sex="M">
+    <name>Edwin /Miselbrook/</name>
+    
+    
+    <father ref=""/>
+    
+    <spouse ref="I89"/>
+    
+    <child ref="I91"/>
+  </individual>
+  <individual id="I91" sex="F">
+    <name>Jessie /Miselbrook/</name>
+    <born date="1898-Q2"/>
+    
+    <father ref="I90"/>
+    <mother ref="I89"/>
+    
+    
+    
+  </individual>
+  <individual id="I92" sex="F">
+    <name>Charlotte //</name>
+    <born date="1852?"/>
+    
+    <father ref=""/>
+    
+    <spouse ref="I67"/>
+    
+    <child ref="I93"/><child ref="I94"/><child ref="I52"/>
+  </individual>
+  <individual id="I93" sex="M">
+    <name>James /Holroyd/</name>
+    <born date="1874?"/>
+    
+    <father ref="I67"/>
+    <mother ref="I92"/>
+    
+    <sibling ref="I94"/><sibling ref="I52"/>
+    
+  </individual>
+  <individual id="I94" sex="M">
+    <name>George /Holroyd/</name>
+    <born date="1885?"/>
+    
+    <father ref="I67"/>
+    <mother ref="I92"/>
+    
+    <sibling ref="I93"/><sibling ref="I52"/>
+    
+  </individual>
+  <individual id="I95" sex="M">
+    <name>John /Entwistle/</name>
+    <born date="1890?"/>
+    
+    <father ref="I16"/>
+    <mother ref="I17"/>
+    
+    <sibling ref="I29"/><sibling ref="I97"/><sibling ref="I30"/><sibling ref="I14"/><sibling ref="I96"/>
+    
+  </individual>
+  <individual id="I96" sex="F">
+    <name>Annie /Entwistle/</name>
+    <born date="1893"/>
+    
+    <father ref="I16"/>
+    <mother ref="I17"/>
+    
+    <sibling ref="I29"/><sibling ref="I97"/><sibling ref="I95"/><sibling ref="I30"/><sibling ref="I14"/>
+    
+  </individual>
+  <individual id="I97" sex="F">
+    <name>Margaret /Entwistle/</name>
+    <born date="1895"/>
+    
+    <father ref="I16"/>
+    <mother ref="I17"/>
+    
+    <sibling ref="I29"/><sibling ref="I95"/><sibling ref="I30"/><sibling ref="I14"/><sibling ref="I96"/>
+    
+  </individual>
+  <individual id="I98" sex="M">
+    <name>Henry /Cozens/</name>
+    <born date="1872?"/>
+    
+    <father ref="I87"/>
+    <mother ref="I88"/>
+    
+    <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
+    
+  </individual>
+  <individual id="I99" sex="M">
+    <name>Charles /Cozens/</name>
+    <born date="1871"/>
+    
+    <father ref="I87"/>
+    <mother ref="I88"/>
+    
+    <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
+    
+  </individual>
+  <individual id="I100" sex="M">
+    <name>Samuel /Cozens/</name>
+    <born date="1869"/>
+    
+    <father ref="I87"/>
+    <mother ref="I88"/>
+    
+    <sibling ref="I101"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
+    
+  </individual>
+  <individual id="I101" sex="M">
+    <name>Daniel /Cozens/</name>
+    <born date="1867"/>
+    
+    <father ref="I87"/>
+    <mother ref="I88"/>
+    
+    <sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
+    
+  </individual>
+  <individual id="I102" sex="M">
+    <name>Frederick /Cozens/</name>
+    <born date="1876?"/>
+    
+    <father ref="I87"/>
+    <mother ref="I88"/>
+    
+    <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I61"/><sibling ref="I53"/>
+    
+  </individual>
+  <individual id="I103" sex="M">
+    <name>Edward /Bugden/</name>
+    <born date="1850"/>
+    
+    <father ref=""/>
+    
+    <spouse ref="I104"/>
+    
+    <child ref="I110"/><child ref="I109"/><child ref="I108"/><child ref="I107"/><child ref="I66"/><child ref="I106"/><child ref="I105"/>
+  </individual>
+  <individual id="I104" sex="F">
+    <name>Frances //</name>
+    <born date="1852"/>
+    
+    <father ref=""/>
+    
+    <spouse ref="I103"/>
+    
+    <child ref="I110"/><child ref="I109"/><child ref="I108"/><child ref="I107"/><child ref="I66"/><child ref="I106"/><child ref="I105"/>
+  </individual>
+  <individual id="I105" sex="F">
+    <name>May /Bugden/</name>
+    <born date="1882"/>
+    
+    <father ref="I103"/>
+    <mother ref="I104"/>
+    
+    <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I106"/>
+    
+  </individual>
+  <individual id="I106" sex="M">
+    <name>Thomas /Bugden/</name>
+    <born date="1889"/>
+    
+    <father ref="I103"/>
+    <mother ref="I104"/>
+    
+    <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I105"/>
+    
+  </individual>
+  <individual id="I107" sex="F">
+    <name>Rose /Bugden/</name>
+    <born date="1879"/>
+    
+    <father ref="I103"/>
+    <mother ref="I104"/>
+    
+    <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I108"/><sibling ref="I66"/><sibling ref="I106"/><sibling ref="I105"/>
+    
+  </individual>
+  <individual id="I108" sex="M">
+    <name>George /Bugden/</name>
+    <born date="1877"/>
+    
+    <father ref="I103"/>
+    <mother ref="I104"/>
+    
+    <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I106"/><sibling ref="I105"/>
+    
+  </individual>
+  <individual id="I109" sex="F">
+    <name>Bessie /Bugden/</name>
+    <born date="1875"/>
+    
+    <father ref="I103"/>
+    <mother ref="I104"/>
+    
+    <sibling ref="I110"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I106"/><sibling ref="I105"/>
+    
+  </individual>
+  <individual id="I110" sex="M">
+    <name>Frederick /Bugden/</name>
+    <born date="1873"/>
+    
+    <father ref="I103"/>
+    <mother ref="I104"/>
+    
+    <sibling ref="I109"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I106"/><sibling ref="I105"/>
+    
+  </individual>
+</family>

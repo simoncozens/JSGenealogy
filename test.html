@@ -1,0 +1,15 @@
+<html>
+<head>
+    <script src="Utilities.js"></script>
+    <script src="DataImport.js"></script>
+    <script src="DrawingEngine.js"></script>
+    <script src="LayoutEngine.js"></script>
+    <script>
+        var url = document.URL.replace("test.html", "family.xml");
+    </script>
+</head>
+<body onload="layout(url, document.getElementById('tree'))">
+<canvas id="tree" width=1000 height=600></canvas>
+</body>
+</html>
+
