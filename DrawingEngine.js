@@ -38,6 +38,16 @@ LayoutHelper.drawMarriage = function(context) {
     context.stroke();
 }
 
+LayoutHelper.drawSingleParent = function(context) {
+    var par = this.parent.SPF();
+    if (!par) return;
+    par = par.layoutObject;
+    context.beginPath();
+    context.moveTo(this.x, par.y+border);
+    context.lineTo(this.x, this.y-border);
+    context.stroke();
+}
+
 function draw( fam, c, layout) {
     var context = c.getContext("2d");
     context.clearRect(0, 0, c.width, c.height);
@@ -50,14 +60,7 @@ function draw( fam, c, layout) {
             i.layoutObject.drawMarriage(context);
             // Draw the marriage
         } else {
-            var par = i.mother || i.father;
-            if (par) {
-                context.beginPath();
-                context.moveTo(i.x, par.y+border);
-                context.lineTo(i.x, i.y-border);
-                context.stroke();
-                
-            }
+            i.layoutObject.drawSingleParent(context);
         }
     });
 

@@ -1,9 +1,9 @@
 var border = 10;
 var start;
-function layout(url, canvas) {
+function layout(url, canvas, startId) {
     var lifeExpectancy = 60;
     var tree = xml2tree(url);
-    start = tree["I2"];
+    start = tree[startId];
     //var 
     directFamily = [ start ];
     if ( start.spouses.length ) { directFamily = directFamily.concat(start.spouses) };
@@ -94,7 +94,7 @@ FamilyTreeIndividual.SPF = function() {
 }
 FamilyTreeIndividual.computeWidth = function () {
     if (!this.father && !this.mother) { return this.width = 1 }
-    if (this.SPF()) { return this.width = this.SPF.computeWidth(); }
+    if (this.SPF()) { return this.width = this.SPF().computeWidth(); }
     this.width = 1+ this.mother.computeWidth() + this.father.computeWidth(); 
     return this.width;
 }
