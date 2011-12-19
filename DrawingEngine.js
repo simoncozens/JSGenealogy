@@ -41,6 +41,7 @@ LayoutHelper.labelBox = function(context) {
 LayoutHelper.drawMarriage = function(context) {
     var mother = this.indiv.mother.layoutObject;
     var father = this.indiv.father.layoutObject;
+    if (!(mother && father)) return;
     var marriageY = mother.y < father.y ? father.y : mother.y;
     context.beginPath();
     context.moveTo(mother.x, mother.y+border);
@@ -57,7 +58,7 @@ LayoutHelper.drawSingleParent = function(context) {
     if (!par) return;
     par = par.layoutObject;
     context.beginPath();
-    context.moveTo(this.x, par.y+border);
+    context.moveTo(par.x, par.y+border);
     context.lineTo(this.x, this.y-border);
     context.stroke();
 }

@@ -41,21 +41,23 @@ function layout(url, canvas, startId) {
         ).map( function(i) { return i.y } );
         if (!known.length) { continue }
         var avg = known.average();
-        genmap[g].filter(
-            function(i) { return !i.hasOwnProperty("y") }
-        ).forEach(
-            function (x) { x.y = avg; x.yApprox = 1 }
+        genmap[g].forEach(
+            function (x) { if (x.hasOwnProperty("y")) return;
+                x.y = avg;
+                x.yApprox = 1 
+            }
         );
     }
     interpolate(genmap); 
     // Compute X values for ancestors
-    start.computeWidth();
+    start.computeWidthUpwards();
     start.x = 0; // Set the target's x value to be the origin
-    start.computeX();
+    start.computeXUpwards();
     // Compute X values for siblings and spouse
-    start.layoutSiblings();
-   
+    if (start.spouses[0]) start.spouses[0].x = 1;
     // Compute X values for descendents
+    start.computeWidthDownwards();
+    start.computeXDownwards();
 
     // Find lowest/highest x and y values, scale drawing accordingly.
     var layout = { minX: 0, minY: 4000, maxX: 0, maxY: 0};
@@ -72,8 +74,6 @@ function layout(url, canvas, startId) {
     layout.width = layout.maxX - layout.minX;
     layout.height = layout.maxY - layout.minY;
 
-    console.log(layout.width+ "  " + layout.height);
-    console.log(canvas.width+ "  " + canvas.height);
     directFamily.forEach(function(i){
         var l = function() {}; l.prototype = LayoutHelper;
         i.layoutObject = new l(); 
@@ -85,7 +85,6 @@ function layout(url, canvas, startId) {
 
     // Now laying out is done, time to call draw on the directFamily
     draw(directFamily,canvas,layout); 
-    console.log(directFamily);
     return directFamily;
 }
 
@@ -95,15 +94,18 @@ FamilyTreeIndividual.birthYear = function() {
 
 }
 
-FamilyTreeIndividual.layoutSiblings = function() {
+FamilyTreeIndividual.layoutSiblings = function(flag) {
+    var tmp = this.x; 
+    // Include siblings' spouses
     if (!this.siblings.length) { return }
     var local = [this].concat(this.siblings).sort(function (a,b) {
         return a.y - b.y
     });
+    if (flag) tmp -= local.length / 2;
     // Which one am I?
     var whoamI; 
     for (var i=0; i< local.length; i++) { if (local[i]==this) whoamI = i} 
-    for (var i=0; i< local.length; i++) { local[i].x = 2*(i - whoamI) }
+    for (var i=0; i< local.length; i++) { local[i].x = (i - whoamI)+tmp }
 
 }
 
@@ -111,21 +113,71 @@ FamilyTreeIndividual.SPF = function() {
     if (this.father && !this.mother) return this.father;
     if (this.mother && !this.father) return this.mother;
 }
-FamilyTreeIndividual.computeWidth = function () {
+
+FamilyTreeIndividual.computeWidthUpwards = function () {
     if (!this.father && !this.mother) { return this.width = 1 }
-    if (this.SPF()) { return this.width = this.SPF().computeWidth(); }
-    this.width = 1+ this.mother.computeWidth() + this.father.computeWidth(); 
+    if (this.SPF()) { return this.width = this.SPF().computeWidthUpwards(); }
+    this.width = 1+ this.mother.computeWidthUpwards() + this.father.computeWidthUpwards(); 
     return this.width;
 }
 
-FamilyTreeIndividual.computeX = function() { 
-    if (this.father) { this.father.x = this.x - (this.width-1) / 2; this.father.computeX(); }
-    if (this.mother) { this.mother.x = this.x + (this.width-1) / 2; this.mother.computeX(); }
+FamilyTreeIndividual.computeWidthDownwards = function () {
+    // Sum of children's widths
+    var that = this;
+    var desccount  = 0;
+    this.offspring.forEach(function(x) {
+        desccount += x.computeWidthDownwards();
+    });
+    var descwidth = (desccount+1)/2;
+    this.width = descwidth > 1 + this.spouses.length ? descwidth : 1+this.spouses.length;
+    return this.width;
+}
+
+FamilyTreeIndividual.computeXUpwards = function() { 
+    if (this.father) { this.father.x = this.x - (this.width-1) / 2; this.father.computeXUpwards(); }
+    if (this.mother) { this.mother.x = this.x + (this.width-1) / 2; this.mother.computeXUpwards(); }
+}
+
+FamilyTreeIndividual.myselfSpousesAndSiblings = function () {
+    var rv = [];
+    var brethren = [this].concat(this.siblings).sort(function (a,b) {
+        return a.y - b.y
+    });
+    brethren.forEach(function(x) { 
+        rv = rv.concat(x);
+        var wives = x.spouses.sort(function(a,b){return a.y-b.y});
+        rv = rv.concat(wives);
+    });
+    return rv;
+}
+
+FamilyTreeIndividual.computeXDownwards = function() { 
+    var base;
+    if (this.SPF()) { base = this.SPF().x }
+    else if (!this.father && !this.mother) { base = 0 }
+    else            { base = (this.father.x+this.mother.x)/2 }
+    //if (!this.hasOwnProperty("x")) { 
+        var start = base;
+        var thisline = this.myselfSpousesAndSiblings();
+        var twidth = 0;
+        thisline.forEach(function(x){ if (x.width) { twidth += x.width } 
+            else { twidth += 1 } 
+        });
+        start -= (twidth-1) /2;
+        thisline.forEach(function(x){
+            x.x  = start; 
+            if (x.width > 1) x.x += (x.width-1)/2; 
+            start = x.x + 1;
+        });
+    //}
+    this.offspring.forEach(function(i) { 
+        i.computeXDownwards();
+    });
 }
 
 FamilyTreeIndividual.childrenAndSpouses = function (gen) {
     var rv = [this];
-    if (this.spouse) rv = rv.concat(this.spouse);
+    if (this.spouses) rv = rv.concat(this.spouses);
     rv.forEach(function(i) { i.generation = gen });
     this.offspring.forEach(function(i) { rv = rv.concat(i.childrenAndSpouses(gen+1)); });
     return rv;
@@ -133,7 +185,7 @@ FamilyTreeIndividual.childrenAndSpouses = function (gen) {
 
 FamilyTreeIndividual.parentsAndSpouses = function(gen) { 
     var rv = [this];
-    if (this.spouse) rv = rv.concat(this.spouse);
+    if (this.spouses) rv = rv.concat(this.spouses);
     rv.forEach(function(i) { i.generation = gen });
     if (this.father) { rv = rv.concat(this.father.parentsAndSpouses(gen-1)) }
     if (this.mother) { rv = rv.concat(this.mother.parentsAndSpouses(gen-1)) }
