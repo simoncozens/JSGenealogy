@@ -21,11 +21,15 @@ LayoutHelper.drawBox = function(context) {
     if (this.indiv.sex == "M") {
         context.rect(this.x - (width+border) + width /2, 
                      this.y-border,width + 2*border, border*2);
+        if (this.indiv.yApprox) { context.fillStyle = "#f0f0ff"; }
+        else { context.fillStyle = "#c0c0ff"; }
     } else {
         context.roundRect(this.x - (width+border) + width
         /2, this.y -border,width + 2*border, border*2);
+        if (this.indiv.yApprox) { context.fillStyle = "#fff0f0" }
+        else { context.fillStyle = "#ffc0c0"; }
     }
-    if (this.indiv.yApprox) { context.fillStyle = "#ddddff"; context.fill() }
+    context.fill()
     context.stroke();
 }
 
@@ -98,7 +102,8 @@ function drawTimeline ( canvas, layout) {
         var point =  ((y - layout.minY) * canvas.height / layout.height);
         context.beginPath();
         context.moveTo(0, point);
-        var length = !(y % 100) ? 10 : !(y % 50) ? 5 : 1;
+        context.strokeStyle = y%50 ? "#000000": "#c0c0c0";
+        var length = !(y % 50) ? canvas.width : 5;
         context.lineTo(length, point);
         context.stroke();
         if (!(y%100)) context.fillText(y, 15, point);
