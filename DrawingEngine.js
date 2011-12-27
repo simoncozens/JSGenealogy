@@ -95,6 +95,7 @@ function drawTimeline ( canvas, layout) {
     var y = layout.minY;
     context.textBaseline = "top";
     context.fillText(y, 15, 0);
+    context.font = "9pt Arial";
     context.textBaseline = "middle";
     while (y < layout.maxY) {
         y += 1; 
@@ -106,7 +107,16 @@ function drawTimeline ( canvas, layout) {
         var length = !(y % 50) ? canvas.width : 5;
         context.lineTo(length, point);
         context.stroke();
-        if (!(y%100)) context.fillText(y, 15, point);
+        context.font = "9pt Arial";
+        context.fillStyle = "#000000";
+        if (!(y%50)) context.fillText(y, 15, point);
+        if (!(y%50)) {
+            context.font = "bold "+(22*canvas.height/layout.height)+"px Arial";
+            context.textAlign="center";
+            context.fillStyle = "#eaeaea";
+            context.fillText((y-50)+"s", canvas.width/2, point-(25*canvas.height/layout.height));
+        }
+
     }
     context.textBaseline = "bottom";
     context.fillText(y, 15, canvas.height);
