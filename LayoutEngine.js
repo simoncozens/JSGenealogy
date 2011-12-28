@@ -13,10 +13,10 @@ function layout(url, canvas, startId) {
         directFamily.concat(start.childrenAndSpouses(0))
         .concat(start.parentsAndSpouses(0)).unique("id"); 
     // Organise into generations
-    var genmap = {}; 
+    var genmap = {};
     directFamily.forEach( function(i) {
-        if (!genmap[i.generation]) genmap[i.generation] = []; 
-        genmap[ i.generation ].push(i);
+        if (!genmap[i.generation]) genmap[i.generation] = { members: [] }; 
+        genmap[ i.generation ].members.push(i);
         // Scan for date clues
         var b = i.born;
         var year;
@@ -36,14 +36,14 @@ function layout(url, canvas, startId) {
     });
     // Approximate unknowns by setting them to the generational average
     for (g in genmap) { 
-        var known = genmap[g].filter( 
+        var known = genmap[g].members.filter( 
             function(i) { return i.hasOwnProperty("y") }
         ).map( function(i) { return i.y } );
         if (!known.length) { continue }
-        var avg = known.average();
-        genmap[g].forEach(
+        genmap[g].avg = known.average();
+        genmap[g].members.forEach(
             function (x) { if (x.hasOwnProperty("y")) return;
-                x.y = avg;
+                x.y = genmap[g].avg;
                 x.yApprox = 1 
             }
         );
@@ -88,7 +88,24 @@ function layout(url, canvas, startId) {
     return directFamily;
 }
 
-function interpolate (x) { } // A problem for another day.
+function interpolate (genmap) {
+    var x = []; var y = [];
+    for (g in genmap) { x.push(parseInt(g)); y.push(genmap[g].avg); }
+    var regress = findLineByLeastSquares(x,y);
+    var regmap = {};
+    for (var i = 0; i <= regress[0].length; i++) {
+        regmap[regress[0][i]] = regress[1][i];
+    }
+    console.log(regmap);
+    for (g in genmap) { 
+        genmap[g].members.forEach(
+            function (x) { if (x.hasOwnProperty("y")) return;
+                x.y = regmap[g].toFixed(0);
+                x.yApprox = 1 
+            }
+        );
+    }
+}
 
 FamilyTreeIndividual.birthYear = function() {
 
