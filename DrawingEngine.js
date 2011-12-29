@@ -31,6 +31,7 @@ LayoutHelper.drawBox = function(context) {
     }
     context.fill()
     context.stroke();
+    this.labelBox(context);
 }
 
 LayoutHelper.labelBox = function(context) {
@@ -74,7 +75,6 @@ function draw( fam, c, layout) {
     fam.forEach(function(i) {
         if (!(i.hasOwnProperty("x") && i.y)) return;
         i.layoutObject.drawBox(context);
-        i.layoutObject.labelBox(context);
         if (i.father && i.mother) {
             i.layoutObject.drawMarriage(context);
             // Draw the marriage
