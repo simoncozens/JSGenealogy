@@ -53,26 +53,33 @@ function layout(url, canvas, startId) {
     start.computeWidthUpwards();
     start.x = 0; // Set the target's x value to be the origin
     start.computeXUpwards();
+    start.computeWidthDownwards();
     // Compute X values for siblings and spouse
     if (start.spouses[0]) start.spouses[0].x = 1;
     // Compute X values for descendents
-    start.computeWidthDownwards();
-    start.computeXDownwards();
-
-    // Find lowest/highest x and y values, scale drawing accordingly.
     var layout = { minX: 0, minY: 4000, maxX: 0, maxY: 0};
     directFamily.forEach(function(i){
         if (!(i.hasOwnProperty("x") && i.y)) return;
         if (i.x < layout.minX) layout.minX = i.x;
-        if (i.y < layout.minY) layout.minY = i.y;
         if (i.x > layout.maxX) layout.maxX = i.x;
-        if (i.y > layout.maxY) layout.maxY = i.y;
+    });
+
+    start.computeXDownwards(2*(layout.maxX-layout.minX));
+
+    // Find lowest/highest x and y values, scale drawing accordingly.
+    directFamily.forEach(function(i){
+        if (!(i.hasOwnProperty("x") && i.y)) return;
+        if (i.x < layout.minX) layout.minX = i.x;
+        if (i.x > layout.maxX) layout.maxX = i.x;
+        if (i.y < layout.minY) layout.minY = i.y;
+        if (i.y > layout.maxY) layout.maxY = parseInt(i.y);
     });
     layout.maxY += 3; layout.maxX += 3;
     layout.minY -= 3; layout.minX -= 6;
     
     layout.width = layout.maxX - layout.minX;
     layout.height = layout.maxY - layout.minY;
+    console.log(layout);
 
     directFamily.forEach(function(i){
         var l = function() {}; l.prototype = LayoutHelper;
@@ -145,7 +152,7 @@ FamilyTreeIndividual.computeWidthDownwards = function () {
     this.offspring.forEach(function(x) {
         desccount += x.computeWidthDownwards();
     });
-    var descwidth = (desccount+1)/2;
+    var descwidth = (desccount+1);
     this.width = descwidth > 1 + this.spouses.length ? descwidth : 1+this.spouses.length;
     return this.width;
 }
@@ -157,38 +164,43 @@ FamilyTreeIndividual.computeXUpwards = function() {
 
 FamilyTreeIndividual.myselfSpousesAndSiblings = function () {
     var rv = [];
-    var brethren = [this].concat(this.siblings).sort(function (a,b) {
+    var brethren = [this].concat(this.siblings).concat(this.spouses).sort(function (a,b) {
         return a.y - b.y
     });
-    brethren.forEach(function(x) { 
-        rv = rv.concat(x);
-        var wives = x.spouses.sort(function(a,b){return a.y-b.y});
-        rv = rv.concat(wives);
-    });
-    return rv;
+    return brethren;
 }
 
-FamilyTreeIndividual.computeXDownwards = function() { 
+FamilyTreeIndividual.computeXDownwards = function(spaceToFill) { 
     var base;
     if (this.SPF()) { base = this.SPF().x }
     else if (!this.father && !this.mother) { base = 0 }
     else            { base = (this.father.x+this.mother.x)/2 }
-    //if (!this.hasOwnProperty("x")) { 
-        var start = base;
-        var thisline = this.myselfSpousesAndSiblings();
-        var twidth = 0;
-        thisline.forEach(function(x){ if (x.width) { twidth += x.width } 
-            else { twidth += 1 } 
+    var start = base;
+    var thisline = this.myselfSpousesAndSiblings();
+    var twidth = 0;
+    thisline.forEach(function(x){ if (x.width) { twidth += x.width } 
+        else { twidth += 1 } 
+    });
+    if(!spaceToFill) spaceToFill = twidth;
+    //console.log("Total width of this line is "+twidth);
+    start -= spaceToFill/2;
+    //console.log("Trying to fill "+spaceToFill+" for "+this.name);
+    //console.log(thisline);
+    thisline.forEach(function(x){
+        if (!x.hasOwnProperty("width")) { x.width = 1 }
+        if (x.x) return;
+        //if (x.width > 1) x.x += (x.width-1)/2; 
+        //console.log("1: "+x.name+" gets "+(x.width/twidth*100)+"% of "+spaceToFill);
+        var mySpace = x.width/twidth*spaceToFill;
+        x.x  = start + mySpace/2;
+        //console.log("... "+mySpace);
+        //console.log("Setting "+x.name+" X to "+x.x);
+        start += mySpace;
+        x.offspring.forEach(function(x){
+            //console.log(x.name+"'s generation gets "+mySpace);
+            x.computeXDownwards(mySpace);
         });
-        start -= (twidth-1) /2;
-        thisline.forEach(function(x){
-            x.x  = start; 
-            if (x.width > 1) x.x += (x.width-1)/2; 
-            start = x.x + 1;
-        });
-    //}
-    this.offspring.forEach(function(i) { 
-        i.computeXDownwards();
+
     });
 }
 
