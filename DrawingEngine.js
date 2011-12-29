@@ -16,6 +16,7 @@ LayoutHelper.inBounds = function(x,y, context) {
 } 
 
 LayoutHelper.drawBox = function(context) {
+    context.font = "8pt Arial";
     var width = context.measureText(this.indiv.name).width;
     context.beginPath();
     if (this.indiv.sex == "M") {
@@ -82,7 +83,6 @@ function draw( fam, c, layout) {
             i.layoutObject.drawSingleParent(context);
         }
     });
-
 }
 
 function drawTimeline ( canvas, layout) { 
@@ -91,11 +91,11 @@ function drawTimeline ( canvas, layout) {
     context.beginPath();
     context.rect(0, 0, 20+context.measureText("1234").width, canvas.height);
     context.fill();
+    context.font = "8pt Arial";
     context.fillStyle = "#000000";
     var y = layout.minY;
     context.textBaseline = "top";
     context.fillText(y, 15, 0);
-    context.font = "9pt Arial";
     context.textBaseline = "middle";
     while (y < layout.maxY) {
         y += 1; 
@@ -107,18 +107,17 @@ function drawTimeline ( canvas, layout) {
         var length = !(y % 50) ? canvas.width : 5;
         context.lineTo(length, point);
         context.stroke();
-        context.font = "9pt Arial";
-        context.fillStyle = "#000000";
         if (!(y%50)) context.fillText(y, 15, point);
         if (!(y%50)) {
             context.font = "bold "+(22*canvas.height/layout.height)+"px Arial";
             context.textAlign="center";
-            context.fillStyle = "#eaeaea";
+            context.fillStyle = "#f2f2f2";
             context.fillText((y-50)+"s", canvas.width/2, point-(25*canvas.height/layout.height));
+            context.font = "8pt Arial";
+            context.fillStyle = "#000000";
         }
 
     }
     context.textBaseline = "bottom";
     context.fillText(y, 15, canvas.height);
-    
 }
