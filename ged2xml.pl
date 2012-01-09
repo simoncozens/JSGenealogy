@@ -6,7 +6,7 @@ my $temp = do { undef $/; <DATA> };
 my $tt = Template->new();
 print "<family>\n";
 for ($ged->individuals) {
-    $tt->process(\$temp, { i => $_ }) or die $tt->error;
+    $tt->process(\$temp, { i => $_, ged => $ged }) or die $tt->error;
 }
 print "</family>\n";
 
@@ -20,4 +20,5 @@ __DATA__
     [% FOR s = i.spouse %]<spouse ref="[% s.xref %]"/>[%END%]
     [% FOR s = i.siblings %]<sibling ref="[% s.xref %]"/>[%END%]
     [% FOR c = i.children %]<child ref="[% c.xref %]"/>[%END%]
+    [% IF i.note %]<note>[%ged.get_note(i.note).get_value%]</note>[% END %]
   </individual>

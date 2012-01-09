@@ -10,8 +10,34 @@
     </script>
 </head>
 <body onload="members = layout(url, document.getElementById('tree'), 'I2')">
-<canvas id="tree" width=2000 height=600></canvas>
+<div><p><b>Notes</b></p>
+<div id="notes" style="float:right; background:#ffd; width:200px;
+height:400px; margin: 20px"></div>
+</div>
+<canvas id="tree" width=600 height=600></canvas>
 <script>
+    var noteElem = document.getElementById("notes");
+    document.getElementById("tree").onmousemove = function c(e) {
+        var that = this;
+        var x;
+        var y;
+        if (e.pageX || e.pageY) { x = e.pageX; y = e.pageY; }
+        else { 
+          x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; 
+          y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+        } 
+        x -= this.offsetLeft;
+        y -= this.offsetTop;
+
+        var note = "";
+        members.forEach(function(obj) { 
+            if (obj.layoutObject.inBounds(x, y, that.getContext("2d"))) {
+                if (obj.note) note = obj.note;
+            } 
+        });
+        noteElem.innerHTML = note;   
+    };
+
     document.getElementById("tree").onmouseup = function c(e) {
         var that = this;
         var x;

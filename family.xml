@@ -8,6 +8,7 @@
     
     
     
+    
   </individual>
   <individual id="I2" sex="M">
     <name>Phillip /Cozens/</name>
@@ -18,6 +19,7 @@
     <spouse ref="I3"/>
     <sibling ref="I8"/><sibling ref="I9"/>
     <child ref="I1"/>
+    
   </individual>
   <individual id="I3" sex="F">
     <name>Ann /King/</name>
@@ -28,6 +30,7 @@
     <spouse ref="I2"/>
     
     <child ref="I1"/>
+    
   </individual>
   <individual id="I4" sex="M">
     <name>John /King/</name>
@@ -38,6 +41,7 @@
     <spouse ref="I5"/>
     <sibling ref="I39"/><sibling ref="I40"/><sibling ref="I41"/>
     <child ref="I3"/>
+    
   </individual>
   <individual id="I5" sex="F">
     <name>Jane /Bond/</name>
@@ -48,6 +52,7 @@
     <spouse ref="I4"/>
     
     <child ref="I3"/>
+    <note>Jane Ann</note>
   </individual>
   <individual id="I6" sex="M">
     <name>Charles /Cozens/</name>
@@ -58,12 +63,14 @@
     <spouse ref="I50"/>
     <sibling ref="I56"/><sibling ref="I54"/><sibling ref="I55"/><sibling ref="I81"/>
     <child ref="I8"/><child ref="I2"/><child ref="I9"/>
+    
   </individual>
   <individual id="I7" sex="F">
     <name>//</name>
     
     
     <father ref=""/>
+    
     
     
     
@@ -78,6 +85,7 @@
     
     <sibling ref="I2"/><sibling ref="I9"/>
     
+    
   </individual>
   <individual id="I9" sex="M">
     <name>Stephen /Cozens/</name>
@@ -88,6 +96,7 @@
     
     <sibling ref="I8"/><sibling ref="I2"/>
     <child ref="I10"/><child ref="I11"/>
+    
   </individual>
   <individual id="I10" sex="F">
     <name>Leanne /Cozens/</name>
@@ -97,6 +106,7 @@
     
     
     <sibling ref="I11"/>
+    
     
   </individual>
   <individual id="I11" sex="F">
@@ -108,12 +118,14 @@
     
     <sibling ref="I10"/>
     
+    
   </individual>
   <individual id="I12" sex="M">
     <name>William /Bond/</name>
     <born date="?.03.1896"/>
     
     <father ref=""/>
+    
     
     
     
@@ -128,6 +140,7 @@
     <spouse ref="I14"/>
     
     <child ref="I5"/>
+    <note>Worked for Clarington Forge, Darlington St Wigan, had an accident, lost a leg</note>
   </individual>
   <individual id="I14" sex="F">
     <name>Elizabeth /Entwistle/</name>
@@ -138,6 +151,7 @@
     <spouse ref="I13"/>
     <sibling ref="I29"/><sibling ref="I97"/><sibling ref="I95"/><sibling ref="I30"/><sibling ref="I96"/>
     <child ref="I5"/>
+    
   </individual>
   <individual id="I15" sex="M">
     <name>Thomas /Bond/</name>
@@ -148,6 +162,7 @@
     
     
     <child ref="I13"/>
+    <note>Thomas Henry</note>
   </individual>
   <individual id="I16" sex="M">
     <name>Thomas /Entwistle/</name>
@@ -158,6 +173,7 @@
     <spouse ref="I17"/>
     <sibling ref="I86"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I83"/><sibling ref="I82"/>
     <child ref="I29"/><child ref="I97"/><child ref="I95"/><child ref="I30"/><child ref="I14"/><child ref="I96"/>
+    <note>1901 census address: 66 Schofield Lane, Wigan</note>
   </individual>
   <individual id="I17" sex="F">
     <name>Margaret /Phoenix/</name>
@@ -168,6 +184,7 @@
     <spouse ref="I16"/>
     <sibling ref="I49"/>
     <child ref="I29"/><child ref="I97"/><child ref="I95"/><child ref="I30"/><child ref="I14"/><child ref="I96"/>
+    
   </individual>
   <individual id="I18" sex="M">
     <name>William /Entwistle/</name>
@@ -178,6 +195,7 @@
     <spouse ref="I21"/>
     
     <child ref="I86"/><child ref="I16"/><child ref="I20"/><child ref="I85"/><child ref="I84"/><child ref="I83"/><child ref="I82"/>
+    
   </individual>
   <individual id="I19" sex="M">
     <name>John /Phoenix/</name>
@@ -188,6 +206,7 @@
     
     
     <child ref="I17"/><child ref="I49"/>
+    
   </individual>
   <individual id="I20" sex="M">
     <name>Robert /Entwistle/</name>
@@ -197,6 +216,7 @@
     <mother ref="I21"/>
     
     <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I83"/><sibling ref="I82"/>
+    
     
   </individual>
   <individual id="I21" sex="F">
@@ -208,6 +228,7 @@
     <spouse ref="I18"/>
     
     <child ref="I86"/><child ref="I16"/><child ref="I20"/><child ref="I85"/><child ref="I84"/><child ref="I83"/><child ref="I82"/>
+    
   </individual>
   <individual id="I22" sex="M">
     <name>Thomas /Easton/</name>
@@ -218,6 +239,7 @@
     <spouse ref="I24"/>
     
     <child ref="I18"/>
+    
   </individual>
   <individual id="I23" sex="M">
     <name>John /Dawson/</name>
@@ -228,6 +250,7 @@
     
     
     <child ref="I21"/>
+    
   </individual>
   <individual id="I24" sex="F">
     <name>Martha /Entwistle/</name>
@@ -238,6 +261,7 @@
     <spouse ref="I22"/>
     <sibling ref="I35"/>
     <child ref="I18"/>
+    
   </individual>
   <individual id="I25" sex="M">
     <name>Ralph /Entwistle/</name>
@@ -248,6 +272,7 @@
     <spouse ref="I26"/>
     
     <child ref="I24"/><child ref="I35"/>
+    <note>"Civil register of chappely of Ringley"</note>
   </individual>
   <individual id="I26" sex="F">
     <name>Jane /Eckersley/</name>
@@ -258,6 +283,7 @@
     <spouse ref="I25"/>
     
     <child ref="I24"/><child ref="I35"/>
+    
   </individual>
   <individual id="I27" sex="M">
     <name>Thomas /Entwistle/</name>
@@ -268,6 +294,7 @@
     <spouse ref="I28"/>
     
     <child ref="I25"/>
+    
   </individual>
   <individual id="I28" sex="F">
     <name>Hannah //</name>
@@ -278,6 +305,7 @@
     <spouse ref="I27"/>
     
     <child ref="I25"/>
+    
   </individual>
   <individual id="I29" sex="M">
     <name>Ralph /Entwistle/</name>
@@ -288,6 +316,7 @@
     <spouse ref="I36"/>
     <sibling ref="I97"/><sibling ref="I95"/><sibling ref="I30"/><sibling ref="I14"/><sibling ref="I96"/>
     <child ref="I31"/><child ref="I32"/>
+    
   </individual>
   <individual id="I30" sex="M">
     <name>James /Entwistle/</name>
@@ -297,6 +326,7 @@
     <mother ref="I17"/>
     
     <sibling ref="I29"/><sibling ref="I97"/><sibling ref="I95"/><sibling ref="I14"/><sibling ref="I96"/>
+    
     
   </individual>
   <individual id="I31" sex="M">
@@ -308,6 +338,7 @@
     
     <sibling ref="I32"/>
     <child ref="I47"/><child ref="I48"/>
+    <note>Committed suicide in the early 1970s because his drivers were smuggling red diesel and he was responsible as owner of the haulage company. He and his wife had Rolls Royces! Three children: "Stuart", Beverley (m.) and a girl. Big house in Hindley by the golf club, with a fitted kitchen and fridges from America.</note>
   </individual>
   <individual id="I32" sex="F">
     <name>Irene /Entwistle/</name>
@@ -318,12 +349,14 @@
     
     <sibling ref="I31"/>
     
+    
   </individual>
   <individual id="I33" sex="M">
     <name>/Entwistle/</name>
     
     
     <father ref=""/>
+    
     
     
     
@@ -338,6 +371,7 @@
     
     
     <child ref="I27"/>
+    
   </individual>
   <individual id="I35" sex="M">
     <name>James /Entwistle/</name>
@@ -347,6 +381,7 @@
     <mother ref="I26"/>
     
     <sibling ref="I24"/>
+    
     
   </individual>
   <individual id="I36" sex="F">
@@ -358,6 +393,7 @@
     <spouse ref="I29"/>
     
     <child ref="I31"/><child ref="I32"/>
+    
   </individual>
   <individual id="I37" sex="M">
     <name>Sam /King/</name>
@@ -368,6 +404,7 @@
     <spouse ref="I38"/>
     
     <child ref="I4"/><child ref="I39"/><child ref="I40"/><child ref="I41"/>
+    
   </individual>
   <individual id="I38" sex="F">
     <name>Alexandrine /Fournier/</name>
@@ -378,6 +415,7 @@
     <spouse ref="I37"/>
     
     <child ref="I4"/><child ref="I39"/><child ref="I40"/><child ref="I41"/>
+    
   </individual>
   <individual id="I39" sex="M">
     <name>Sam /King/</name>
@@ -388,6 +426,7 @@
     <spouse ref="I46"/>
     <sibling ref="I4"/><sibling ref="I40"/><sibling ref="I41"/>
     <child ref="I45"/>
+    
   </individual>
   <individual id="I40" sex="F">
     <name>Marie /King/</name>
@@ -397,6 +436,7 @@
     <mother ref="I38"/>
     
     <sibling ref="I4"/><sibling ref="I39"/><sibling ref="I41"/>
+    
     
   </individual>
   <individual id="I41" sex="M">
@@ -408,6 +448,7 @@
     <spouse ref="I42"/>
     <sibling ref="I4"/><sibling ref="I39"/><sibling ref="I40"/>
     <child ref="I43"/><child ref="I44"/>
+    
   </individual>
   <individual id="I42" sex="F">
     <name>Jean //</name>
@@ -418,6 +459,7 @@
     <spouse ref="I41"/>
     
     <child ref="I43"/><child ref="I44"/>
+    
   </individual>
   <individual id="I43" sex="F">
     <name>Christine /King/</name>
@@ -427,6 +469,7 @@
     <mother ref="I42"/>
     
     <sibling ref="I44"/>
+    
     
   </individual>
   <individual id="I44" sex="M">
@@ -438,6 +481,7 @@
     
     <sibling ref="I43"/>
     
+    
   </individual>
   <individual id="I45" sex="M">
     <name>Gordon /King/</name>
@@ -445,6 +489,7 @@
     
     <father ref="I39"/>
     <mother ref="I46"/>
+    
     
     
     
@@ -458,6 +503,7 @@
     <spouse ref="I39"/>
     
     <child ref="I45"/>
+    
   </individual>
   <individual id="I47" sex="M">
     <name>Stuart /Entwistle/</name>
@@ -467,6 +513,7 @@
     
     
     <sibling ref="I48"/>
+    
     
   </individual>
   <individual id="I48" sex="M">
@@ -478,6 +525,7 @@
     
     <sibling ref="I47"/>
     
+    
   </individual>
   <individual id="I49" sex="F">
     <name>Catherine /Phoenix/</name>
@@ -488,6 +536,7 @@
     
     <sibling ref="I17"/>
     
+    <note>"Kitty"</note>
   </individual>
   <individual id="I50" sex="F">
     <name>Cissie /Holroyd/</name>
@@ -498,6 +547,7 @@
     <spouse ref="I6"/>
     
     <child ref="I8"/><child ref="I2"/><child ref="I9"/>
+    
   </individual>
   <individual id="I51" sex="F">
     <name>Lilly /Entwistle/</name>
@@ -508,6 +558,7 @@
     <spouse ref="I52"/><spouse ref="I65"/>
     
     <child ref="I50"/><child ref="I62"/>
+    
   </individual>
   <individual id="I52" sex="M">
     <name>Theodore /Holroyd/</name>
@@ -518,6 +569,7 @@
     <spouse ref="I51"/>
     <sibling ref="I93"/><sibling ref="I94"/>
     <child ref="I50"/>
+    <note>Theodore E Holroyd. Adopted son. 3 months old when census wastaken.</note>
   </individual>
   <individual id="I53" sex="M">
     <name>Phillip /Cozens/</name>
@@ -528,6 +580,7 @@
     <spouse ref="I66"/>
     <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/>
     <child ref="I56"/><child ref="I54"/><child ref="I55"/><child ref="I6"/><child ref="I81"/>
+    <note>Coxun on RY Brittania. "Phillip Arthur Cozens" 1901 lived in Weston Lane, Weston, Southampton</note>
   </individual>
   <individual id="I54" sex="M">
     <name>Henry /Cozens/</name>
@@ -538,6 +591,7 @@
     <spouse ref="I59"/>
     <sibling ref="I56"/><sibling ref="I55"/><sibling ref="I6"/><sibling ref="I81"/>
     <child ref="I60"/>
+    
   </individual>
   <individual id="I55" sex="M">
     <name>Sam /Cozens/</name>
@@ -548,6 +602,7 @@
     
     <sibling ref="I56"/><sibling ref="I54"/><sibling ref="I6"/><sibling ref="I81"/>
     
+    <note>Samuel C Cozens. Died in hospital ship in Med WWII</note>
   </individual>
   <individual id="I56" sex="M">
     <name>Fred /Cozens/</name>
@@ -558,6 +613,7 @@
     <spouse ref="I57"/>
     <sibling ref="I54"/><sibling ref="I55"/><sibling ref="I6"/><sibling ref="I81"/>
     <child ref="I58"/>
+    
   </individual>
   <individual id="I57" sex="F">
     <name>Milly //</name>
@@ -568,6 +624,7 @@
     <spouse ref="I56"/>
     
     <child ref="I58"/>
+    
   </individual>
   <individual id="I58" sex="M">
     <name>Arthur /Cozens/</name>
@@ -575,6 +632,7 @@
     
     <father ref="I56"/>
     <mother ref="I57"/>
+    
     
     
     
@@ -588,6 +646,7 @@
     <spouse ref="I54"/>
     
     <child ref="I60"/>
+    
   </individual>
   <individual id="I60" sex="F">
     <name>Peggy /Cozens/</name>
@@ -598,6 +657,7 @@
     
     
     
+    <note>Living Coventry?</note>
   </individual>
   <individual id="I61" sex="M">
     <name>William /Cozens/</name>
@@ -608,6 +668,7 @@
     
     <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I53"/>
     
+    <note>William Thomas Known as Wilf</note>
   </individual>
   <individual id="I62" sex="M">
     <name>Jack /Pilling/</name>
@@ -618,6 +679,7 @@
     <spouse ref="I63"/>
     
     <child ref="I64"/><child ref="I69"/><child ref="I70"/>
+    <note>109, Elm Road, Thetford</note>
   </individual>
   <individual id="I63" sex="F">
     <name>Shirley //</name>
@@ -628,6 +690,7 @@
     <spouse ref="I62"/>
     
     <child ref="I64"/><child ref="I69"/><child ref="I70"/>
+    
   </individual>
   <individual id="I64" sex="M">
     <name>Rob /Pilling/</name>
@@ -637,6 +700,7 @@
     <mother ref="I63"/>
     
     <sibling ref="I69"/><sibling ref="I70"/>
+    
     
   </individual>
   <individual id="I65" sex="M">
@@ -648,6 +712,7 @@
     <spouse ref="I51"/>
     
     <child ref="I62"/>
+    
   </individual>
   <individual id="I66" sex="F">
     <name>Matilda /Bugden/</name>
@@ -658,6 +723,7 @@
     <spouse ref="I53"/>
     <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I106"/><sibling ref="I105"/>
     <child ref="I56"/><child ref="I54"/><child ref="I55"/><child ref="I6"/><child ref="I81"/>
+    <note>Matilda Elizabeth ("Lissie")</note>
   </individual>
   <individual id="I67" sex="M">
     <name>James /Holroyd/</name>
@@ -668,6 +734,10 @@
     <spouse ref="I92"/>
     
     <child ref="I93"/><child ref="I94"/><child ref="I52"/>
+    <note>Died by 1925
+
+1881 census: Ready Carr, Marsden, Yorkshire
+1901 census: 14 Sydney Street, Onchan, IoM</note>
   </individual>
   <individual id="I68" sex="M">
     <name>John /Entwistle/</name>
@@ -678,6 +748,8 @@
     <spouse ref="I72"/>
     
     <child ref="I51"/>
+    <note>Died by 1925
+1901 address: 244 Chorley Old Road, Bolton</note>
   </individual>
   <individual id="I69" sex="F">
     <name>Lynda /Pilling/</name>
@@ -688,6 +760,7 @@
     
     <sibling ref="I64"/><sibling ref="I70"/>
     
+    <note>Mill House, Chippenham Road, Freckenham, Newmarket </note>
   </individual>
   <individual id="I70" sex="F">
     <name>Susan /Pilling/</name>
@@ -698,6 +771,7 @@
     <spouse ref="I71"/>
     <sibling ref="I64"/><sibling ref="I69"/>
     
+    <note>24 Brook Crescent, Bury St Edmonds</note>
   </individual>
   <individual id="I71" sex="M">
     <name>/Woods/</name>
@@ -706,6 +780,7 @@
     <father ref=""/>
     
     <spouse ref="I70"/>
+    
     
     
   </individual>
@@ -718,6 +793,7 @@
     <spouse ref="I68"/>
     <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I76"/>
     <child ref="I51"/>
+    <note>1876 (1901 census) ; 1877 (1881 census)</note>
   </individual>
   <individual id="I73" sex="M">
     <name>Henry /Longworth/</name>
@@ -727,6 +803,7 @@
     <mother ref="I75"/>
     
     <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I72"/><sibling ref="I76"/>
+    
     
   </individual>
   <individual id="I74" sex="M">
@@ -738,6 +815,7 @@
     <spouse ref="I75"/>
     
     <child ref="I77"/><child ref="I80"/><child ref="I73"/><child ref="I79"/><child ref="I78"/><child ref="I72"/><child ref="I76"/>
+    <note>Innkeeper of "The Tempest Arms", 1110 Chorley Old Road, Bolton. Clara Allanson was domestic servant.</note>
   </individual>
   <individual id="I75" sex="F">
     <name>Ellen //</name>
@@ -748,6 +826,7 @@
     <spouse ref="I74"/>
     
     <child ref="I77"/><child ref="I80"/><child ref="I73"/><child ref="I79"/><child ref="I78"/><child ref="I72"/><child ref="I76"/>
+    <note>b c.1841</note>
   </individual>
   <individual id="I76" sex="M">
     <name>Jacob /Longworth/</name>
@@ -757,6 +836,7 @@
     <mother ref="I75"/>
     
     <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I72"/>
+    
     
   </individual>
   <individual id="I77" sex="M">
@@ -768,6 +848,7 @@
     
     <sibling ref="I80"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I72"/><sibling ref="I76"/>
     
+    <note>James E Longworth b c 1860 Q2-Q3</note>
   </individual>
   <individual id="I78" sex="F">
     <name>Lilly /Longworth/</name>
@@ -777,6 +858,7 @@
     <mother ref="I75"/>
     
     <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I72"/><sibling ref="I76"/>
+    
     
   </individual>
   <individual id="I79" sex="F">
@@ -788,6 +870,7 @@
     
     <sibling ref="I77"/><sibling ref="I80"/><sibling ref="I73"/><sibling ref="I78"/><sibling ref="I72"/><sibling ref="I76"/>
     
+    
   </individual>
   <individual id="I80" sex="F">
     <name>Sophia /Longworth/</name>
@@ -797,6 +880,7 @@
     <mother ref="I75"/>
     
     <sibling ref="I77"/><sibling ref="I73"/><sibling ref="I79"/><sibling ref="I78"/><sibling ref="I72"/><sibling ref="I76"/>
+    
     
   </individual>
   <individual id="I81" sex="M">
@@ -808,6 +892,7 @@
     
     <sibling ref="I56"/><sibling ref="I54"/><sibling ref="I55"/><sibling ref="I6"/>
     
+    <note>Norman J Cozens</note>
   </individual>
   <individual id="I82" sex="F">
     <name>Jane /Entwistle/</name>
@@ -817,6 +902,7 @@
     <mother ref="I21"/>
     
     <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I83"/>
+    
     
   </individual>
   <individual id="I83" sex="M">
@@ -828,6 +914,7 @@
     
     <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I82"/>
     
+    
   </individual>
   <individual id="I84" sex="F">
     <name>Mary /Entwistle/</name>
@@ -837,6 +924,7 @@
     <mother ref="I21"/>
     
     <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I83"/><sibling ref="I82"/>
+    
     
   </individual>
   <individual id="I85" sex="M">
@@ -848,6 +936,7 @@
     
     <sibling ref="I86"/><sibling ref="I16"/><sibling ref="I20"/><sibling ref="I84"/><sibling ref="I83"/><sibling ref="I82"/>
     
+    
   </individual>
   <individual id="I86" sex="M">
     <name>William /Entwistle/</name>
@@ -857,6 +946,7 @@
     <mother ref="I21"/>
     
     <sibling ref="I16"/><sibling ref="I20"/><sibling ref="I85"/><sibling ref="I84"/><sibling ref="I83"/><sibling ref="I82"/>
+    
     
   </individual>
   <individual id="I87" sex="M">
@@ -868,6 +958,7 @@
     <spouse ref="I88"/>
     
     <child ref="I101"/><child ref="I100"/><child ref="I99"/><child ref="I98"/><child ref="I89"/><child ref="I102"/><child ref="I61"/><child ref="I53"/>
+    <note>Fisherman</note>
   </individual>
   <individual id="I88" sex="F">
     <name>Lucy //</name>
@@ -878,6 +969,7 @@
     <spouse ref="I87"/>
     
     <child ref="I101"/><child ref="I100"/><child ref="I99"/><child ref="I98"/><child ref="I89"/><child ref="I102"/><child ref="I61"/><child ref="I53"/>
+    
   </individual>
   <individual id="I89" sex="F">
     <name>Rose /Cozens/</name>
@@ -888,6 +980,7 @@
     <spouse ref="I90"/>
     <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
     <child ref="I91"/>
+    
   </individual>
   <individual id="I90" sex="M">
     <name>Edwin /Miselbrook/</name>
@@ -898,6 +991,7 @@
     <spouse ref="I89"/>
     
     <child ref="I91"/>
+    <note>Edwin James Miselbrook</note>
   </individual>
   <individual id="I91" sex="F">
     <name>Jessie /Miselbrook/</name>
@@ -905,6 +999,7 @@
     
     <father ref="I90"/>
     <mother ref="I89"/>
+    
     
     
     
@@ -918,6 +1013,7 @@
     <spouse ref="I67"/>
     
     <child ref="I93"/><child ref="I94"/><child ref="I52"/>
+    <note>Charlotte C</note>
   </individual>
   <individual id="I93" sex="M">
     <name>James /Holroyd/</name>
@@ -928,6 +1024,7 @@
     
     <sibling ref="I94"/><sibling ref="I52"/>
     
+    <note>James William</note>
   </individual>
   <individual id="I94" sex="M">
     <name>George /Holroyd/</name>
@@ -938,6 +1035,7 @@
     
     <sibling ref="I93"/><sibling ref="I52"/>
     
+    <note>George William</note>
   </individual>
   <individual id="I95" sex="M">
     <name>John /Entwistle/</name>
@@ -947,6 +1045,7 @@
     <mother ref="I17"/>
     
     <sibling ref="I29"/><sibling ref="I97"/><sibling ref="I30"/><sibling ref="I14"/><sibling ref="I96"/>
+    
     
   </individual>
   <individual id="I96" sex="F">
@@ -958,6 +1057,7 @@
     
     <sibling ref="I29"/><sibling ref="I97"/><sibling ref="I95"/><sibling ref="I30"/><sibling ref="I14"/>
     
+    
   </individual>
   <individual id="I97" sex="F">
     <name>Margaret /Entwistle/</name>
@@ -967,6 +1067,7 @@
     <mother ref="I17"/>
     
     <sibling ref="I29"/><sibling ref="I95"/><sibling ref="I30"/><sibling ref="I14"/><sibling ref="I96"/>
+    
     
   </individual>
   <individual id="I98" sex="M">
@@ -978,6 +1079,7 @@
     
     <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
     
+    <note>Henry W</note>
   </individual>
   <individual id="I99" sex="M">
     <name>Charles /Cozens/</name>
@@ -988,6 +1090,7 @@
     
     <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
     
+    <note>Charles W</note>
   </individual>
   <individual id="I100" sex="M">
     <name>Samuel /Cozens/</name>
@@ -998,6 +1101,7 @@
     
     <sibling ref="I101"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
     
+    <note>Samuel C</note>
   </individual>
   <individual id="I101" sex="M">
     <name>Daniel /Cozens/</name>
@@ -1008,6 +1112,7 @@
     
     <sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I102"/><sibling ref="I61"/><sibling ref="I53"/>
     
+    <note>Daniel J</note>
   </individual>
   <individual id="I102" sex="M">
     <name>Frederick /Cozens/</name>
@@ -1017,6 +1122,7 @@
     <mother ref="I88"/>
     
     <sibling ref="I101"/><sibling ref="I100"/><sibling ref="I99"/><sibling ref="I98"/><sibling ref="I89"/><sibling ref="I61"/><sibling ref="I53"/>
+    
     
   </individual>
   <individual id="I103" sex="M">
@@ -1028,6 +1134,8 @@
     <spouse ref="I104"/>
     
     <child ref="I110"/><child ref="I109"/><child ref="I108"/><child ref="I107"/><child ref="I66"/><child ref="I106"/><child ref="I105"/>
+    <note>1881 Address: 11 Charles St, Southampton
+1901 Address: 145 Manor Rd Sholing, Southampton</note>
   </individual>
   <individual id="I104" sex="F">
     <name>Frances //</name>
@@ -1038,6 +1146,7 @@
     <spouse ref="I103"/>
     
     <child ref="I110"/><child ref="I109"/><child ref="I108"/><child ref="I107"/><child ref="I66"/><child ref="I106"/><child ref="I105"/>
+    
   </individual>
   <individual id="I105" sex="F">
     <name>May /Bugden/</name>
@@ -1047,6 +1156,7 @@
     <mother ref="I104"/>
     
     <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I106"/>
+    
     
   </individual>
   <individual id="I106" sex="M">
@@ -1058,6 +1168,7 @@
     
     <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I105"/>
     
+    
   </individual>
   <individual id="I107" sex="F">
     <name>Rose /Bugden/</name>
@@ -1067,6 +1178,7 @@
     <mother ref="I104"/>
     
     <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I108"/><sibling ref="I66"/><sibling ref="I106"/><sibling ref="I105"/>
+    
     
   </individual>
   <individual id="I108" sex="M">
@@ -1078,6 +1190,7 @@
     
     <sibling ref="I110"/><sibling ref="I109"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I106"/><sibling ref="I105"/>
     
+    
   </individual>
   <individual id="I109" sex="F">
     <name>Bessie /Bugden/</name>
@@ -1088,6 +1201,7 @@
     
     <sibling ref="I110"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I106"/><sibling ref="I105"/>
     
+    
   </individual>
   <individual id="I110" sex="M">
     <name>Frederick /Bugden/</name>
@@ -1097,6 +1211,7 @@
     <mother ref="I104"/>
     
     <sibling ref="I109"/><sibling ref="I108"/><sibling ref="I107"/><sibling ref="I66"/><sibling ref="I106"/><sibling ref="I105"/>
+    
     
   </individual>
 </family>

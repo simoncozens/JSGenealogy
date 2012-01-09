@@ -17,6 +17,9 @@ function xml2tree(url) {
         ind.name = ind.name.replace(/\//g,"");
         ind.id = ind.DOMNode.getAttribute("id");
 
+        var n = ind.DOMNode.getElementsByTagName("note");
+        if (n && n[0]) { ind.note = n[0].textContent }
+
         var f = ind.DOMNode.getElementsByTagName("father");
         if (f && f[0]) { ind.father = indivs[f[0].getAttribute("ref")] }
         var m = ind.DOMNode.getElementsByTagName("mother");
