@@ -15,7 +15,10 @@ function layout(url, canvas, startId) {
     // Organise into generations
     var genmap = {};
     directFamily.forEach( function(i) {
-        if (!genmap[i.generation]) genmap[i.generation] = { members: [] }; 
+        if (!genmap[i.generation]) genmap[i.generation] = { 
+            members: [],
+            marriages: [], baseTotal: 0, stretchTotal: 0 // Used later
+        }; 
         genmap[ i.generation ].members.push(i);
         // Scan for date clues
         var b = i.born;
@@ -53,10 +56,6 @@ function layout(url, canvas, startId) {
     start.computeWidthUpwards();
     start.x = 0; // Set the target's x value to be the origin
     start.computeXUpwards();
-    start.computeWidthDownwards();
-    // Compute X values for siblings and spouse
-    if (start.spouses[0]) start.spouses[0].x = 1;
-    // Compute X values for descendents
     var layout = { minX: 0, minY: 4000, maxX: 0, maxY: 0};
     directFamily.forEach(function(i){
         if (!(i.hasOwnProperty("x") && i.y)) return;
@@ -64,7 +63,31 @@ function layout(url, canvas, startId) {
         if (i.x > layout.maxX) layout.maxX = i.x;
     });
 
-    start.computeXDownwards(2*(layout.maxX-layout.minX));
+    // Compute x values for each generation down from the root
+    var avail = layout.maxX - layout.minX;
+    if (avail < 30) avail = 30;
+    start.fillGenmap(genmap, 0);
+    for (var i = 0; genmap[i]; i++) { var thisGen = genmap[i];
+        var multiplier;
+        if (genmap[i].baseTotal + thisGen.stretchTotal < avail || thisGen.stretchTotal == 0) {
+            multiplier = 1;
+        } else {
+            multiplier = (avail-thisGen.baseTotal) / thisGen.stretchTotal;
+        }
+        var finalWidth = thisGen.baseTotal + thisGen.stretchTotal * multiplier;
+        var cursor = -(finalWidth)/2;
+        thisGen.marriages.forEach(function(m) {
+            m.left = cursor;
+            m.right = cursor += (m.base + multiplier * m.stretch);
+            var count = 1;
+            m.members.forEach(function(mem) {
+                mem.x = m.left + (count / m.base) * (m.right - m.left);
+                count++;
+            });
+            console.log("Placing the following members between "+m.left+" and "+m.right);
+            console.log(m.members);
+        });
+    }
 
     // Find lowest/highest x and y values, scale drawing accordingly.
     directFamily.forEach(function(i){
@@ -145,16 +168,42 @@ FamilyTreeIndividual.computeWidthUpwards = function () {
     return this.width;
 }
 
-FamilyTreeIndividual.computeWidthDownwards = function () {
-    // Sum of children's widths
-    var that = this;
-    var desccount  = 0;
+// The trick is to assign to each marriage/SPF two values: base width and
+// stretch. Stretch is the size of the next generation down.
+// In the next phase, available space is filled up proportionally by
+// stretch a la TeX.
+
+FamilyTreeIndividual.selfPlusSpouseCount = function() {
+    return 1 + this.spouses.length;
+}
+
+FamilyTreeIndividual.fillGenmap = function (genmap, generation){
+    var base = this.selfPlusSpouseCount();
+    var stretch = 2;
     this.offspring.forEach(function(x) {
-        desccount += x.computeWidthDownwards();
+        stretch += x.selfPlusSpouseCount();
+        x.fillGenmap(genmap, generation+1);
     });
-    var descwidth = (desccount+1);
-    this.width = descwidth > 1 + this.spouses.length ? descwidth : 1+this.spouses.length;
-    return this.width;
+    // If we have no spouses, compute directly.
+    if (stretch < base) stretch = base;
+    if (base == 1) {
+        if (base < stretch) base = stretch;
+        genmap[generation].marriages.push( { base:base, stretch: stretch, members: [ this ] });
+    } else {
+        var that = this;
+        if (base < stretch) base = stretch;
+        this.spouses.forEach(function(s) {
+            if (s == that.spouses[0]) { 
+                base = 2;
+                genmap[generation].marriages.push( { base:2, stretch: stretch, members: [ that, s ] });
+            } else {
+                base = 1;
+                genmap[generation].marriages.push( { base:1, stretch: stretch, members: [ s ] });
+            }
+        });
+    }
+    genmap[generation].baseTotal += base;
+    genmap[generation].stretchTotal += stretch;
 }
 
 FamilyTreeIndividual.computeXUpwards = function() { 
