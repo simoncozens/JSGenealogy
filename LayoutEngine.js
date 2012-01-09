@@ -84,8 +84,8 @@ function layout(url, canvas, startId) {
                 mem.x = m.left + (count / m.base) * (m.right - m.left);
                 count++;
             });
-            console.log("Placing the following members between "+m.left+" and "+m.right);
-            console.log(m.members);
+            //console.log("Placing the following members between "+m.left+" and "+m.right);
+            //console.log(m.members);
         });
     }
 
@@ -102,7 +102,7 @@ function layout(url, canvas, startId) {
     
     layout.width = layout.maxX - layout.minX;
     layout.height = layout.maxY - layout.minY;
-    console.log(layout);
+    //console.log(layout);
 
     directFamily.forEach(function(i){
         var l = function() {}; l.prototype = LayoutHelper;
@@ -126,7 +126,7 @@ function interpolate (genmap) {
     for (var i = 0; i <= regress[0].length; i++) {
         regmap[regress[0][i]] = regress[1][i];
     }
-    console.log(regmap);
+    //console.log(regmap);
     for (g in genmap) { 
         genmap[g].members.forEach(
             function (x) { if (x.hasOwnProperty("y")) return;
